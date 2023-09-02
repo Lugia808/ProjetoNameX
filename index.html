@@ -4,62 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NameX</title>
+    <title>SafetyWork</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body style="background-color: rgb(203, 203, 203);">
+<body style="background-color: rgb(255, 225, 195);">
 
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="margin-left: 2vh;">SafetyWork</a>
 
-        <nav class="navbar navbar-light rounded-1 d-flex flex-row align-items-center"
-            style="background-color: rgb(44, 44, 44);">
-            <a class="navbar-brand d-flex align-items-center w-50" href="#">
-                <img src="Safety.png" width="30" height="30" class="d-inline-block align-center rounded-5">
-                <h4 class="text-white h2">NameX</h4>
-                <a class="navbar-brand" href="...">
-                    <h4 class="text-white h4">Sobre</h4>
-                </a>
-            </a>
-        </nav>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Saiba mais</a>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-primary" style="margin-right: 2vh;">Login</button>
+    </nav>
 
-        <div class="container d-flex" style="height: 500px;">
+    <div class="container d-flex" style="height: 500px;">
 
-            <div style="background-image: url(https://img.freepik.com/fotos-gratis/construtor-masculino-de-uniforme-jeans-luvas-segurando-o-capacete-na-mao-vista-frontal_176474-10062.jpg?w=1060&t=st=1693512170~exp=1693512770~hmac=12934604ce99eb96cb7b88b57e97b9be2eb72ccc6c2dcc7904e83a9235e33645);"
-                class="container bg-dark w-100 h-100 d-flex align-items-center justify-content-center flex-column">
-                <div class="w-75 h-25 text-center">
-                    <h5 class="text-white h2">
-                        Providenciamos uma visita que mudará sua empresa
-                    </h5>
-                </div>
-                <button class="btn btn-primary rounded-5 p-3 mb-2">Contratar Serviços</button>
-                <button class="rounded-5"
-                    style="border: none; background-color: rgb(41, 41, 211, 0.3); font-weight: 500; color: rgb(255, 255, 255);">
-                    Sou Profissional</button>
+        <div style="background-image: url(https://img.freepik.com/fotos-gratis/construtor-masculino-de-uniforme-jeans-luvas-segurando-o-capacete-na-mao-vista-frontal_176474-10062.jpg?w=1060&t=st=1693512170~exp=1693512770~hmac=12934604ce99eb96cb7b88b57e97b9be2eb72ccc6c2dcc7904e83a9235e33645);"
+            class="container bg-dark w-100 h-100 d-flex align-items-center justify-content-center flex-column rounded-3">
+            <div class="w-75 h-25 text-center">
+                <h5 class="text-white h2">
+                    Providenciamos uma visita que mudará sua empresa
+                </h5>
             </div>
-
+            <button class="btn btn-primary rounded-5 p-3 mb-2"
+                style="background-color: rgb(0, 123, 255, 0.8); border: none;">
+                <h2 style="color: rgb(255, 255, 255, 1) !important; margin-bottom: 0 !important;">Contratar Serviços</h2>
+            </button>
+            <button class="rounded-5 p-2"
+                style="border: none; background-color: rgb(41, 41, 211, 0.2); font-weight: 500; color: rgb(255, 255, 255);">
+                Sou Profissional</button>
         </div>
 
-        <section class="container">
-
-            <div class="card d-flex flex-row align-items-center mt-3">
-                <img class="card-img-top w-25 " style=" height: 50%; border-radius: 50%; margin-left: 1rem;"
-                    src="Safety.png"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Quero estar dentro das normas</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Saiba mais</a>
-                </div>
-            </div>
-        </section>
     </div>
 
+
+    <div class="d-flex justify-content-around bg-dark p-4" style="margin-top: 2vh;">
+
+            <div class="d-lg-flex w-75" >
+                <div class="d-md-flex align-items-center mb-lg-0 mb-md-5 w-100 justify-content-around">
+                    <div class="col1 me-md-4 mb-md-0 mb-5">
+                        <div class="card pb-4">
+                            <span class="fab fa-envira mt-3"><img src="Safetynofd.png" class="img-fluid"></span>
+                            <p class="h4 pt-4">Profissionais especializados</p>
+                            <p class="p1 text-muted">
+                                Seeking justice in the world is a sed significant emotional and investment when we
+                            </p>
+                            <span class="fas fa-arrow-right"></span>
+                        </div>
+                    </div>
+                    <div class="col2 me-md-4 mb-md-0 mb-5">
+                        <div class="card pb-4">
+                            <span class="fas fa-cut mt-3"><img src="Safetynofd.png" class="img-fluid"></span>
+                            <p class="h4 pt-4">Certficados</p>
+                            <p class="p1 text-muted">
+                                Seeking justice in the world is a sed significant emotional and investment when we
+                                follow
+                                this
+                                call.
+                            </p>
+                            <span class="fas fa-arrow-right"></span>
+                        </div>
+                    </div>
+                    <div class="col3 me-md-4 mb-md-0 mb-5">
+                        <div class="card pb-4">
+                            <span class="fas fa-people-carry mt-3"><img src="Safetynofd.png" class="img-fluid"></span>
+                            <p class="h4 pt-4">Olhar Crítico</p>
+                            <p class="p1 text-muted">
+                                Seeking justice in the world is a sed significant emotional and investment when we
+                                follow
+                                this
+                                call.
+                            </p>
+                            <span class="fas fa-arrow-right"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
