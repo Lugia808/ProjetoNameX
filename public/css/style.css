@@ -15,6 +15,7 @@ body {
 justify-content: center;
 align-items: center;
 min-height: 100vh;
+background-color: orange !important;
 }
 
 p {
@@ -103,7 +104,36 @@ margin-left: 2vh;
     background-image: url("https://dexcar.com.br/wp-content/uploads/2023/02/10.02.23-Gestao-de-Seguranca-do-Trabalho.jpg");
     border-top-left-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
-    border-right: rgb(156, 156, 156) solid 5px;
+}
+
+.colServices{
+    width: 23%;
+    min-height: 35vh;
+    text-align: center;
+    padding: 10px;
+    border-radius: 0.4rem;
+    background-color:#ffffff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-top: 2rem;
+}
+
+#cardServices{
+    background-color: rgba(243, 193, 85, 0.5);
+    padding: 1%;
+}
+
+@media (max-width: 900px) {
+    #cardf {
+        min-width: 35vh;
+
+    }
+}
+
+
+@media (max-width:990px) {
+    .colServices{
+        width: 80% !important;
+    }
 }
 
 
@@ -118,13 +148,21 @@ background-color: #0172b3;
 .container .content {
 max-width: 100%;
 }
+
+#cardServices{
+    min-height: 122vh !important;
+}
+
 }
 
 @media (min-width: 700px) {
 #background-img{
 background-position: 50%; background-size: cover;
 
+}
 
+.colServices{
+    width: 30% !important;
 }
 
 }
@@ -153,4 +191,7 @@ width: 100%;
 .content {
 padding: 25px;
 }
+
+
+
 }

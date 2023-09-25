@@ -1,4 +1,4 @@
-<div class="container d-flex" style="height: 500px;">
+<div class="container d-flex" style="height: 400px;">
     <div style="background-image: url(https://sesirs.org.br/sites/default/files/styles/2x1_lg/public/paragraphs--image-top/banner_topo_seg_trab.jpg?itok=ncIL5q3p);"
         id="background-img"
         class="container w-100 h-100 d-flex align-items-center justify-content-center flex-column rounded-3 bg-image">
@@ -17,7 +17,7 @@
         </button>
     </div>
 </div>
-
+{{!--
 <div class="container bg-light mt-3 rounded-2" style="height: 35vh;">
     <div class="row h-100">
         <div class="col-4 h-100 d-flex align-items-center p-0">
@@ -25,15 +25,15 @@
 
             </div>
         </div>
-        <div class="col col-8 bg-light rounded-2">
-            <div class="mt-3">
-                <h3 class="text-center">Serviços 
-                    {{!-- MELHORAR --}}
-                    </h3>
+        <div class="col col-8 bg-light rounded-2 h-100">
+            <div>
+                <h3 class="text-center mt-4">Serviços
 
-                <ul class="list-group">
+                </h3>
 
-                    {{!-- PRECISA DE AJUSTE --}}
+                <ul>
+
+
 
                     <li class="list-group-item">Análise de riscos</li>
                     <li class="list-group-item">Serviço2</li>
@@ -42,9 +42,35 @@
             </div>
         </div>
     </div>
+</div> --}}
+
+
+<div class="container mt-3 rounded-2" id="cardServices">
+    <div class="row flex-column flex-md-row justify-content-around align-items-center">
+
+        <div class="col-10 col-md-3 colServices">
+            <!-- Conteúdo da segunda coluna -->
+            <h4>Serviço 2</h4>
+            <p>aasadasd</p>
+        </div>
+        <div class="col-10 col-md-4 colServices">
+            <!-- Conteúdo da primeira coluna -->
+            <img src="/images/iconSST.png" style="width: 20%;">
+            <h4>Análise de riscos</h4>
+            <p class="text-black">Nossos especialistas em segurança conduzem análises para identificar e mitigar riscos
+                em sua empresa, assegurando a proteção de seu negócio e a tranquilidade de seus colaboradores.</p>
+        </div>
+        <div class="col-10 col-md-3 colServices">
+            <!-- Conteúdo da terceira coluna -->
+            <p>Coluna 3</p>
+        </div>
+    </div>
 </div>
 
-<div class="d-flex justify-content-around container mt-5" style="margin-top: 2vh;">
+
+
+
+<div class="d-flex justify-content-around container mt-3" style="margin-top: 2vh;">
     <div class="d-lg-flex w-100">
         <div class="d-md-flex align-items-center mb-lg-0 mb-md-5 justify-content-around">
             <div class="col1 me-md-4 mb-md-0 mb-5 w-100 ">
@@ -89,3 +115,7 @@
         <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-whatsapp"></i></a></li>
     </ul>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
