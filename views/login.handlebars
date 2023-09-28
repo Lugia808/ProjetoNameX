@@ -6,29 +6,29 @@
             <h2 class="card-title d-flex justify-content-center">SecurityWork</h2>
             <br>
             <h6 class="card-subtitle mb-2 text-body-secondary" style="color: black !important;">Usuário</h6>
+            <form action="/login" method="post">
+                <input class="form-control mb-1 input-xl" type="text" placeholder="Digite seu usuário"
+                    aria-label="default input example" style="height: 3rem !important; font-size: 100%" name="username">
 
-            <input class="form-control mb-1 input-xl" type="text" placeholder="Digite seu usuário"
-                aria-label="default input example" style="height: 3rem !important; font-size: 100%">
 
+                <label for="inputPassword5" class="form-label">
+                    <h6 class="card-subtitle text-body-secondary" style="color: black !important;">Senha</h6>
+                </label>
 
-            <label for="inputPassword5" class="form-label">
-                <h6 class="card-subtitle text-body-secondary" style="color: black !important;">Senha</h6>
-            </label>
+                <input type="password" id="inputPassword5" class="form-control input-xl" placeholder="Digite sua senha"
+                    aria-describedby="passwordHelpBlock" style="height: 3rem !important;" name="senha">
+                <div class="d-grid gap-2">
 
-            <input type="password" id="inputPassword5" class="form-control input-xl" placeholder="Digite sua senha"
-                aria-describedby="passwordHelpBlock" style="height: 3rem !important;">
-            <div class="d-grid gap-2">
+                    <br>
 
-                <br>
-
-                <button type="button" class="btn text-white" style="background-color: #003C5F;">Enviar</button>
-
-            </div>
-
-            <br>
-            <a href="#" class="card-link text-primary">Esqueci a senha</a>
-            <a href="/cadastro" class="card-link text-primary">Cadastre-se</a>
-
+                    <button type="submit" class="btn text-white" style="background-color: #003C5F;">Enviar</button>
+            </form>
         </div>
+
+        <br>
+        <a href="#" class="card-link text-primary">Esqueci a senha</a>
+        <a href="/cadastro" class="card-link text-primary">Cadastre-se</a>
+
     </div>
+</div>
 </div>

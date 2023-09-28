@@ -7,20 +7,20 @@
                 <h6 class="card-title">(Cadastro Técnico)</h6>
             </div>
             <br>
-            <form>
+            <form action="/cadastro" method="post">
                 <div class="form-row d-flex flex-wrap justify-content-between">
                     <div class="form-group col-md-5">
                         <label for="inputUser">Usuário</label>
-                        <input type="text" class="form-control" id="inputUser" placeholder="Usuário">
+                        <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="user">
                     </div>
                     <div class="form-group col-md-6 inputC" style="width: 55%;">
                         <label for="inputEmail4">E-mail</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail">
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail" name="email">
                     </div>
                     <div class="form-group col-md-7">
                         <label for="inputPassword4">Senha</label>
                         <input type="password" class="form-control" id="inputPassword4" placeholder="Senha"
-                            style="width: 95% !important;">
+                            style="width: 95% !important;" name="senha">
                     </div>
 
                     <div class="form-group col-md-5">
