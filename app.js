@@ -13,29 +13,28 @@ app.use(flash());
 
 const bcrypt = require('bcryptjs');
 
-app.use(session({
-    secret: 'secret_key',
-    resave: false,
-    saveUninitialized: false,
-}));
 
-app.use(passport.initialize())
-app.use(passport.session())
 
 
 //Config
 //handlebars
-app.engine("handlebars", handlebars.engine({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+    app.engine("handlebars", handlebars.engine({ defaultLayout: 'main' }));
+    app.set('view engine', 'handlebars');
 //Midleware
+//Session & passport
+    app.use(session({
+        secret: 'secret_key',
+        resave: false,
+        saveUninitialized: false,
+    }));
 
+    app.use(passport.initialize())
+    app.use(passport.session())
 //Public
-app.use(express.static(path.join(__dirname, "public")))
+    app.use(express.static(path.join(__dirname, "public")))
 
-app.use(express.static('images'))
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
 
 //Rotas
 app.use('/', admin) // lembrar de colocar o nome /admin antes da rota.
