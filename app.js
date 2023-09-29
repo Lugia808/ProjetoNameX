@@ -9,6 +9,7 @@ const passport = require('passport')
 require('./config/auth')(passport)
 const flash = require('connect-flash');
 
+app.use(flash());
 
 const bcrypt = require('bcryptjs');
 

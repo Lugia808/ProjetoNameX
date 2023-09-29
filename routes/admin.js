@@ -14,11 +14,20 @@ router.get('/login', (req, res) => {
     res.render('login')
 })
 
-// router.post('/login', passport.authenticate('local', {
-//     successRedirect: '/',
-//     failureRedirect: '/login',
-//     failureFlash: false,
-// }));
+router.post('/login', (req, res, next) => {
+
+    User.findOne({where: {username: 'Natanael'}}).then((usuario)=>{
+        console.log(usuario.dataValues.password)
+    })
+
+    var message = []
+    passport.authenticate("local", {
+
+        successRedirect: "/",  // se autenticação ocorrer com sucesso
+        failureRedirect: "/login",// se ocorrer alguma falha na autenticação
+        failureFlash: true,
+    })(req, res, next)
+});
 
 
 router.get('/cadastro', (req, res) => {
