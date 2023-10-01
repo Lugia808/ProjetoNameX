@@ -159,7 +159,8 @@ p {
     #background-img {
         background-position: 50%;
         background-size: cover;
-
+        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
     }
 
     .colServices {
@@ -188,13 +189,6 @@ p {
         border-radius: 10px;
     }
 
-    #background-img {
-
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 80% 75%;
-    }
-
     .card {
         width: 100%;
     }
@@ -216,7 +210,6 @@ p {
 
     #containerImg {
         width: 100% !important;
-
     }
 
     #background-img{
