@@ -32,11 +32,11 @@ Como Começar
 
 Tecnologias Utilizadas
 
-    Frontend: (Liste as tecnologias e frameworks utilizados no frontend, como HTML, CSS, JavaScript, React, etc.)
+    Frontend: (HTML, CSS, Javascript, Bootstrap)
 
-    Backend: (Liste as tecnologias e frameworks utilizados no backend, como Node.js, Python, Ruby on Rails, etc.)
+    Backend: (Node.Js)
 
-    Banco de Dados: (Indique o sistema de gerenciamento de banco de dados utilizado, como MySQL, PostgreSQL, MongoDB, etc.)
+    Banco de Dados: (MySQL)
 
 Como Executar Localmente
 
@@ -75,21 +75,3 @@ shell
     npm start
 
     Acessar a Aplicação: Acesse a plataforma em seu navegador da web, geralmente em http://localhost:3000/.
-
-Contribuição
-
-Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
-
-    Faça um fork do repositório.
-
-    Crie uma branch com sua nova funcionalidade: git checkout -b minha-nova-funcionalidade.
-
-    Faça commit das suas alterações: git commit -m 'Adicionando nova funcionalidade'.
-
-    Envie suas alterações para o repositório: git push origin minha-nova-funcionalidade.
-
-    Crie um novo pull request explicando suas alterações.
-
-Licença
-
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
