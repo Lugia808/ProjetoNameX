@@ -14,7 +14,7 @@ router.get('/login', (req, res) => {
 router.post('/login', (req, res, next) => {
     passport.authenticate("local", {
         successRedirect: "/tec/home",
-        failureRedirect: "/login",
+        failureRedirect: "/tec/login",
         failureFlash: true,
     })(req, res, next)
 });
@@ -33,6 +33,8 @@ router.post('/cadastro', async (req, res) => {
     const senha = req.body.senha;
     const email = req.body.email;
 
+    console.log(user, senha, email)
+
     const salt = await bcrypt.genSalt(10);
     const senhahash = await bcrypt.hash(senha, salt);
 
@@ -42,6 +44,7 @@ router.post('/cadastro', async (req, res) => {
         password: senhahash
     }).then(() => {
         console.log('Conta criada com sucesso!')
+        res.redirect('/tec/login')
     }).catch((error) => {
         console.log('Ocorreu algum erro ao criar a conta: ' + error)
     })
