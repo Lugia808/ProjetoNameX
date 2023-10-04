@@ -30,7 +30,7 @@
                         <label for="confirmPassword4">Confirmar Senha</label>
                         <input type="password" class="form-control" id="senhaC" placeholder="Confirmar Senha"
                             style="width: 95% !important;" name="senhaC" required>
-                            <span id="senhaMatch" class="text-success"></span>
+                        <span id="senhaMatch" class="text-success"></span>
                     </div>
                 </div>
                 <div class="form-row d-flex flex-wrap justify-content-between">
@@ -50,7 +50,7 @@
                     <div class="form-group col-md-4">
                         <label for="cepx">Cep:
                             <input name="cep" class="form-control" type="text" id="cep" value="" size="10" maxlength="9"
-                                onblur="pesquisacep(this.value);" /></label><br />
+                                onblur="pesquisacep(this.value) " onkeyup="handleZipCode(event)" /></label><br />
                     </div>
                     <div class="form-group col-md-8">
                         <label for="rua">Endereço:
@@ -211,24 +211,22 @@
         }
     };
 
-let senha = document.getElementById('senha');
-let senhaC = document.getElementById('senhaC');
-let senhaMatch = document.getElementById('senhaMatch');
+    let senha = document.getElementById('senha');
+    let senhaC = document.getElementById('senhaC');
+    let senhaMatch = document.getElementById('senhaMatch');
 
-function validarSenha() {
-    if (senha.value === senhaC.value) {
-        senhaMatch.textContent = "As senhas coincidem.";
-        senhaMatch.classList.add('text-success');
-        senhaMatch.classList.remove('text-danger');
-    } else {
-        senhaMatch.textContent = "As senhas não coincidem.";
-        senhaMatch.classList.add('text-danger');
-        senhaMatch.classList.remove('text-success');
+    function validarSenha() {
+        if (senha.value === senhaC.value) {
+            senhaMatch.textContent = "As senhas coincidem.";
+            senhaMatch.classList.add('text-success');
+            senhaMatch.classList.remove('text-danger');
+        } else {
+            senhaMatch.textContent = "As senhas não coincidem.";
+            senhaMatch.classList.add('text-danger');
+            senhaMatch.classList.remove('text-success');
+        }
     }
-}
 
-// Verificar também quando o campo for modificado, para que a mensagem suma quando as senhas forem iguais
-senhaC.addEventListener('input', validarSenha);
-
-
+    // Verificar também quando o campo for modificado, para que a mensagem suma quando as senhas forem iguais
+    senhaC.addEventListener('input', validarSenha);
 </script>
