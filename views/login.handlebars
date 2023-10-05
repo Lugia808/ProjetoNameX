@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center h-100 w-100" style="height: 91vh !important;">
+<div class="d-flex justify-content-center align-items-center w-100" style="height: 90vh !important;">
     <div class="card w-50" id="cardf" style="background-color: #F2F9FF;" style="width: 60% !important;">
 
         <div class="card-body w-75">
@@ -6,7 +6,7 @@
             <h2 class="card-title d-flex justify-content-center">Teconex</h2>
             <br>
             <h6 class="card-subtitle mb-2 text-body-secondary" style="color: black !important;">Usuário</h6>
-            <form  method="post" action="/tec/login">
+            <form  method="post" action="/login">
                 <input class="form-control mb-1 input-xl" type="text" placeholder="Digite seu usuário"
                     aria-label="default input example" style="height: 3rem !important; font-size: 100%" name="username">
 
@@ -27,10 +27,14 @@
 
         <br>
         <a href="#" class="card-link text-primary">Esqueci a senha</a>
-        <a href="/tec/cadastro" class="card-link text-primary">Cadastre-se</a>
+        <button data-toggle="modal" data-target="#exampleModalCenter" class="card-link text-primary" style="background-color: transparent; border: none; text-decoration:underline !important">Cadastre-se</button>
 
     </div>
 </div>
 </div>
 
 <h1>{{message}}</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

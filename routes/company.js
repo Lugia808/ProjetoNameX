@@ -5,10 +5,6 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs')
 
 
-router.get('/login', (req, res)=>{
-    res.render('login')
-})
-
 router.get('/cadastro', (req, res)=>{
     res.render('cadastroEMP')
 })

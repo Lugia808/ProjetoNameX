@@ -52,24 +52,24 @@
             </li>
         </ul>
     </div>
-    <button class="btn text-white" data-toggle="modal" data-target="#exampleModalCenter"
-        style="margin-right: 2vh; background-color: #003C5F">Login <i class="bi bi-person-circle"></i></button>
-        
+    <a href="/login"><button class="btn text-white"
+        style="margin-right: 0.5vh; background-color: #003C5F">Login <i class="bi bi-person-check-fill"></i></button></a>
+    <button class="btn text-white btn-success" data-toggle="modal" data-target="#exampleModalCenter" style="margin-right: 2vh;">Cadastro <i class="bi bi-person-add"></i></button>
 </nav>
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            {{!-- <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Qual opção tem mais relação com você?</h5>
+                <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div> --}}
+            </div>
             <div class="modal-body d-flex">
-                <a href="/tec/login" class="btn btn-warning w-50 rounded-0">Sou técnico</a>
-                <a href="/company/login" class="btn btn-success w-50 rounded-0">Sou empresa</a>
+                <a href="/tec/cadastro" class="btn w-50 rounded-0 text-white" style="background-color:#ea9b1c;">Técnico</a>
+                <a href="/company/cadastro" class="btn w-50 rounded-0 text-white" style="background-color: #003C5F;">Empresa</a>
             </div>
 
         </div>
