@@ -13,7 +13,7 @@ router.get('/login', (req, res) => {
 
 router.post('/login', (req, res, next) => {
     passport.authenticate("local", {
-        successRedirect: "/tec/home",
+        successRedirect: "/home",
         failureRedirect: "/tec/login",
         failureFlash: true,
     })(req, res, next)
@@ -49,15 +49,6 @@ router.post('/cadastro', async (req, res) => {
         console.log('Ocorreu algum erro ao criar a conta: ' + error)
     })
 
-})
-
-router.get('/home', (req, res) => {
-
-    var session = 1
-
-    res.render('homepage', {
-        session: session
-    })
 })
 
 router.get('/logout', function(req, res, next){
