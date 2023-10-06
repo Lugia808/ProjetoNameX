@@ -5,19 +5,34 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
-const flash = require('connect-flash');
 const bcrypt = require('bcryptjs');
 
 // Configuração do Handlebars
 app.engine("handlebars", handlebars.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Middleware
+//FLash
 app.use(session({
-    secret: 'secret_key',
+    secret: 'your-secret-key', // Change this to a secure secret key
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: false
 }));
+
+const flash = require('connect-flash')
+
+app.use(flash());
+
+
+// Middleware
+
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next();
+})
+
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -29,6 +29,7 @@ router.post('/cadastro', async (req, res) => {
     User.create({
         username: user,
         email: email,
+        tipo: 'tecnico',
         password: senhahash
     }).then(() => {
         console.log('Conta criada com sucesso!')

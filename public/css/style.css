@@ -235,5 +235,32 @@ p {
         background-color: rgb(55, 77, 152) !important;
         background-image: none !important;
     }
+    #success_msg{
+        width: 100% !important;
+    }
+    #logoName{
+        display: none !important;
+    }
+    #linkLogin{
+        width: 50% !important;
+    }
+    #botaoL{
+        width: 100% !important;
+        border-radius: 0;
+    }
+    #botaoC{
+        width: 50% !important;
+        border-radius: 0;
+    }
+}
 
+/* CSS for mobile devices (screen width less than 768px) */
+@media (max-width: 767px) {
+    #clickdesce {
+        display: none;
+    }
+
+    #mobileButton {
+        display: block;
+    }
 }
