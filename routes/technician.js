@@ -4,7 +4,8 @@ const { sequelize, Sequelize } = require('../models/Database/Database')
 const passport = require('passport');
 const bcrypt = require('bcryptjs')
 
-const User = require('../models/Database/User')
+const User = require('../models/Database/User');
+const UserTEC = require('../models/Database/UserTEC');
 require('../config/auth')(passport);
 
 //Fazer que de acordo com a conta logada redirecionar para sua rota (company, technician)
