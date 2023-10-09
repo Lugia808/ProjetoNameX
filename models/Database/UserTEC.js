@@ -1,19 +1,15 @@
 const { sequelize, Sequelize } = require('./Database')
 
-const UserEMP = sequelize.define('UserEMP', {
+const UserTEC = sequelize.define('UserTEC', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
-    CNPJ: {
+    num_registro: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
-    },
-    tam_empresa: {
-        type:Sequelize.STRING,
-        allowNull: false
     },
     tipo: {
         type: Sequelize.STRING,
@@ -24,9 +20,9 @@ const UserEMP = sequelize.define('UserEMP', {
     }
 
 }, {
-    tableName: 'userEmp', // Nome da tabela no banco de dados
+    tableName: 'userTec', // Nome da tabela no banco de dados
 })
 
 //User.sync({force: true})
 
-module.exports = UserEMP
+module.exports = UserTEC

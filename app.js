@@ -7,6 +7,8 @@ const session = require('express-session');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
+
+
 // Configuração do Handlebars
 app.engine("handlebars", handlebars.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
