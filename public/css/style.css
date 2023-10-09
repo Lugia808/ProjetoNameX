@@ -77,6 +77,14 @@ p {
     font-weight: 700;
 }
 
+.form-group{
+    margin-bottom: 0.5rem !important;
+}
+
+label{
+    margin-bottom: 0 !important;
+}
+
 .container .content {
     max-width: 300px;
 }
@@ -119,7 +127,7 @@ p {
 }
 
 #cardServices {
-    background-color: #EB8900;
+    background-color: #374D98;
     padding: 1%;
 }
 
@@ -202,6 +210,7 @@ p {
 
     #logoImg {
         width: 50% !important;
+        margin-left: 5vh !important;
     }
 
     .card {
@@ -252,6 +261,17 @@ p {
         width: 50% !important;
         border-radius: 0;
     }
+    .redes{
+        display: none !important;
+    }
+    #divRedes{
+        width: 100% !important;
+        display: flex;
+        justify-content: center !important;
+    }
+    #cardBody{
+        width: 100% !important;
+    }
 }
 
 /* CSS for mobile devices (screen width less than 768px) */
@@ -264,3 +284,11 @@ p {
         display: block;
     }
 }
+
+        /* Estilos CSS personalizados */
+        .cardI {
+            transition: transform 0.2s; /* Adiciona uma transição suave ao efeito de zoom */
+        }
+        .cardI:hover {
+            transform: scale(1.1); /* Aplica um aumento de 10% no tamanho quando o mouse passa por cima */
+        }

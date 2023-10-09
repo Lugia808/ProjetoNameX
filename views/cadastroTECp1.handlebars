@@ -1,89 +1,96 @@
-<div class="d-flex justify-content-center align-items-center h-100 w-100 mt-4">
-    <div class="card w-50 d-flex justify-content-center align-items-center" id="cardf"
-        style="background-color: #F2F9FF;" style="width: 60% !important;">
+<div class="d-flex flex-row">
+    <div class="d-flex justify-content-center align-items-center w-50" style="height: 90vh !important;">
+        <div class="w-100 h-100"
+            style="background-image: url(/images/SSTWpp.jpg); background-size: cover;  background-position: 90%  !important;"
+            id="background-img">
 
-        <div class="card-body w-75">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <h2 class="card-title d-flex justify-content-center">SecurityWork</h2>
-                <h6 class="card-title">(Cadastro Técnico)</h6>
+            <div class="d-flex flex-column align-items-center justify-content-center h-25">
+                <h1 class="card-title d-flex justify-content-center text-white display-3 font-weight-normal m-0">
+                    TeConnect</h1>
             </div>
-            <br>
-            <form action="/tec/cadastro" method="post">
-                <div class="form-row d-flex flex-wrap justify-content-between">
-                    <div class="form-group col-md-5">
-                        <label for="inputUser">Usuário</label>
-                        <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="user"
-                            required>
-                    </div>
-                    <div class="form-group col-md-6 inputC" style="width: 55%;">
-                        <label for="inputEmail4">E-mail</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail" name="email"
-                            required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Senha</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Senha"
-                            style="width: 95% !important;" name="senha" required>
-                    </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center h-100 w-50">
+        <div class="card w-100 d-flex justify-content-center align-items-center p-0" id="cardf"
+            style="background-color: #F2F9FF; min-height: 90vh !important; ">
+            <div class="card-header w-100 text-center">
+                <h2 class="m-0">Formulário do técnico</h2>
+            </div>
+            <div class="card-body w-75">
 
-                    <div class="form-group col-md-6">
-                        <label for="confirmPassword4">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="senhaC" placeholder="Confirmar Senha"
-                            style="width: 95% !important;" name="senhaC" required>
-                        <span id="senhaMatch" class="text-success"></span>
-                    </div>
-                </div>
-                <div class="form-row d-flex flex-wrap justify-content-between">
+                <form action="/tec/cadastro" method="post">
+                    <div class="form-row d-flex flex-wrap justify-content-between ">
+                        <div class="form-group col-md-6 m-0">
+                            <label for="inputUser">Usuário</label>
+                            <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="user"
+                                required>
+                        </div>
+                        <div class="form-group col-md-6 inputC" style="width: 55%;">
+                            <label for="inputEmail4">E-mail</label>
+                            <input type="email" class="form-control input-sm" id="inputEmail4 " placeholder="E-mail"
+                                name="email" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Senha</label>
+                            <input type="password" class="form-control input-group-sm" id="senha" placeholder="Senha"
+                                name="senha" required>
+                        </div>
 
-                    <div class="form-group col-md-6">
-                        <label for="inputAddress2">CPF</label>
-                        <input type="text" class="form-control" id="RegraValida" value="" name="RegraValida"
-                            onkeydown="javascript: fMasc( this, mCPF );" placeholder="000.000.000-00" maxlength="14"
-                            required>
+                        <div class="form-group col-md-6">
+                            <label for="confirmPassword4">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="senhaC" placeholder="Confirmar Senha"
+                                style="width: 95% !important;" name="senhaC" required>
+                            <span id="senhaMatch" class="text-success"></span>
+                        </div>
                     </div>
-                    <div class="form-group col-md-5 inputC" style="width: 47%;">
-                        <label for="inputAddress2">Nº Telefone</label>
+                    <div class="form-row d-flex flex-wrap justify-content-between">
 
-                        <input type="tel" maxlength="15" class="form-control" onkeyup="handlePhone(event)"
-                            id="inputAdress2" placeholder="(00) 00000-0000" required>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress2">CPF</label>
+                            <input type="text" class="form-control" id="RegraValida" value="" name="RegraValida"
+                                onkeydown="javascript: fMasc( this, mCPF );" placeholder="000.000.000-00" maxlength="14"
+                                required>
+                        </div>
+                        <div class="form-group col-md-6 inputC" style="width: 50%;">
+                            <label for="inputAddress2">Nº Telefone</label>
+
+                            <input type="tel" maxlength="15" class="form-control" onkeyup="handlePhone(event)"
+                                id="inputAdress2" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cepx">Cep:
+                                <input name="cep" class="form-control" type="text" id="cep" value=""
+                                    maxlength="9" onblur="pesquisacep(this.value) "
+                                    onkeyup="handleZipCode(event)" /></label>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="rua">Endereço:
+                                <input name="rua" class="form-control" type="text" id="rua" size="60" /></label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="bairro">Bairro:
+                                <input name="bairro" class="form-control" type="text" id="bairro" /></label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cidade">Cidade:
+                                <input name="cidade" class="form-control" type="text" id="cidade" /></label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            Estado:
+                            <input name="uf" type="text" id="uf" size="2" class="form-control" />
+                        </div>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="cepx">Cep:
-                            <input name="cep" class="form-control" type="text" id="cep" value="" size="10" maxlength="9"
-                                onblur="pesquisacep(this.value) " onkeyup="handleZipCode(event)" /></label><br />
-                    </div>
-                    <div class="form-group col-md-8">
-                        <label for="rua">Endereço:
-                            <input name="rua" class="form-control" type="text" id="rua" size="60" /></label><br />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="bairro">Bairro:
-                            <input name="bairro" class="form-control" type="text" id="bairro" /></label>
-                    </div>
-                    <div class="form-group" style="width: 47% !important;">
-                        <label>Cidade:
-                            <input name="cidade" class="form-control" type="text" id="cidade" size="40" /></label>
-                    </div>
-                    <div class="form-group col-md-4">
-                        Estado:
-                        <input name="uf" type="text" id="uf" size="2" class="form-control" />
-                    </div>
-                </div>
+<br>
+                    <button type="submit" class="btn text-white w-100" style="background-color: #003C5F;"
+                        onclick="return validarSenha();">Registrar</button>
+                </form>
                 <br>
                 <a href="#" class="card-link text-primary">Esqueci a senha</a>
-                <br>
-                <br>
 
-                <button type="submit" class="btn text-white" style="background-color: #003C5F;"
-                    onclick="return validarSenha();">Registrar</button>
-            </form>
-
-
-
+            </div>
         </div>
     </div>
 </div>
-
 
 <script>
 
@@ -227,14 +234,14 @@
     senhaC.addEventListener('input', validarSenha);
 
 
-    <script>
-        function scrollToSection(sectionId) {
+
+    function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
     }
-</script>
+
 
 
 </script>
