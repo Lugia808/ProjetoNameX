@@ -1,0 +1,29 @@
+<h1>SERVIÇOS</h1>
+{{#if tec}}
+{{#each serviceData}}
+
+<div class="card m-4 w-100">
+
+    <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
+    <p>Descrição: {{dataValues.descricao}}</p>
+    <p>Categoria: {{dataValues.categoria}}</p>
+    <p>Contratante: {{dataValues.contratante}}</p>
+    <p>Valor: {{dataValues.valor}}</p>
+    <button class="btn btn-success w-100">Candidatar-se</button>
+</div>
+</div>
+{{/each}}
+{{else}}
+{{#each serviceData}}
+<div class="card m-4 w-100">
+
+    <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
+    <p>Descrição: {{dataValues.descricao}}</p>
+    <p>Categoria: {{dataValues.categoria}}</p>
+    <p>Contratante: {{dataValues.contratante}}</p>
+    <p>Valor: {{dataValues.valor}}</p>
+
+</div>
+</div>
+{{/each}}
+{{/if}}

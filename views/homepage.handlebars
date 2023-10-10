@@ -1,101 +1,103 @@
-<div class=" d-flex justify-content-center" style="width: 100vw !important;">
-    <div class="row mt-3" style="min-height: 85vh; max-width: 100vw; min-width: 100vw ">
-        <div class="col-md-3 h-100">
-            <div class="card w-100 h-100 p-0" style="background-color: #ececec;">
-                <div class="card-header">
-                    <h6> <i class="bi bi-globe-americas"></i> Região (ajeitar back-end)</h6>
-                </div>
-                <div class="card-body w-100 d-flex flex-column" style="background-color: #4153de;">
-                    <ul class="list-group" style="margin-left: 2vh">
-                        <li>Ferramentas do técnico</li>
-                    </ul>
-                </div>
-            </div>
+<div class="w-100 d-flex">
+    <div class="d-flex justify-content-center align-items-center h-100 w-25 d-flex flex-column"
+        style="min-height: 90vh;height:100vh; max-width: 100vw; background-color: #ececec;">
+        <div class="w-100 h-100 bg-dark p-3">
+
+            <h6><i class="bi bi-globe-americas"></i> Região (ajeitar back-end)</h6>
         </div>
-        <div class="col-md-6">
-            <div class="card w-100 h-100">
+        <div class="card-body w-100 bg-primary">
+            <ul class="list-group">
+                <li>Ferramentas do técnico</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center w-50"
+        style="min-height: 90vh !important; max-height:90vh !important;height:90vh; max-width: 100vw; background-color: #f76d6d;">
+        <div class="w-50 p-3">
+            <div class="card w-100" style="max-height: 80vh !important;">
                 <div class="card-header">
                     <h5 class="card-title">Trabalhos para os técnicos</h5>
                     <p class="card-text">Conteúdo da Coluna 2.</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="card w-100 h-100">
-                        <div class="card-header">
-                            <h5 class="card-title">Criar Novo Serviço</h5>
-                        </div>
-                        <div class="card-body">
-                            <form action="/criarServico" method="post">
-                                <div class="mb-3">
-                                    <label for="nomeServico" class="form-label">Nome do Serviço</label>
-                                    <select name="nomeServico" class="form-control" id="">
-                                        <option value="1">Serviço 1</option>
-                                        <option value="2">Serviço 2</option>
-                                        <option value="3">Serviço 3</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="descricaoServico" class="form-label">Descrição</label>
-                                    <textarea class="form-control" id="descricaoServico" rows="3"
-                                        placeholder="Digite uma descrição para o serviço"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="valorServico" class="form-label">Valor</label>
-                                    <input type="text" class="form-control" id="valorServico"
-                                        placeholder="Digite o valor do serviço">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="categoriaServico" class="form-label">Categoria</label>
-                                    <select class="form-select" id="categoriaServico" name="categoria">
-                                        <option value="1">Categoria 1</option>
-                                        <option value="2">Categoria 2</option>
-                                        <option value="3">Categoria 3</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Criar Serviço</button>
-                            </form>
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Criar Novo Serviço</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/criarServico" method="post">
+                            <div class="mb-3">
+                                <label for="nomeServico" class="form-label">Nome do Serviço</label>
+                                <select name="nomeServico" class="form-control" id="servico">
+                                    <option value="1">Serviço 1</option>
+                                    <option value="2">Serviço 2</option>
+                                    <option value="3">Serviço 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descricaoServico" class="form-label">Descrição</label>
+                                <input type="text" name="descricao">
+                            </div>
+                            <div class="mb-3">
+                                <label for="valorServico" class="form-label">Valor</label>
+                                <input type="text" class="form-control" id="valorServico"
+                                    placeholder="Digite o valor do serviço" name="valorServico">
+                            </div>
+                            <div class="mb-3">
+                                <label for="categoriaServico" class="form-label">Categoria</label>
+                                <select class="form-select" id="categoriaServico" name="categoria">
+                                    <option value="1">Categoria 1</option>
+                                    <option value="2">Categoria 2</option>
+                                    <option value="3">Categoria 3</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Criar Serviço</button>
+                        </form>
                     </div>
                 </div>
 
-
-                <div class="card-body w-100 d-flex justify-content-center">
-
-                    <div class="card w-75 h-25 p-1">
-                        <div class="w-100 h-100 d-flex flex-column">
-                            <div class="row d-flex justify-content-around">
-
-                                <div
-                                    class=" col-md-6 d-flex justify-content-center align-items-center bg-secondary mt-2 rounded-1">
-                                    <h5 class="mt-1"><i class="bi bi-building"></i>Empresa</h5>
-                                </div>
-                                <div
-                                    class="bg-success col-md-5 h-100 d-flex justify-content-center align-items-center mt-2 rounded-1">
-                                    <h5>Valor: $$$$</h5>
-                                </div>
-
-                            </div>
-                            <div class="h-25">
-
-                            </div>
-                            <div class="w-100">
-                                <button class="btn btn-success w-100 btn-sm">
-                                    <h4>Candidatar-se</h4>
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card w-100 h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Coluna 3</h5>
-                    <p class="card-text">Conteúdo da Coluna 3.</p>
-                </div>
-            </div>
-        </div>
+
     </div>
+
+
+    {{#if tec}}
+
+    <div class="d-flex justify-content-center align-items-center h-100 w-25 flex-column"
+        style="min-height: 90vh; max-width: 100vw; background-color: #e3cbcb; overflow:auto;">
+            {{#each serviceData}}
+        <div class="card mb-4">
+
+            <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
+            <p>Descrição: {{dataValues.descricao}}</p>
+            <p>Categoria: {{dataValues.categoria}}</p>
+            <p>Contratante: {{dataValues.contratante}}</p>
+            <p>Valor: {{dataValues.valor}}</p>
+            <button class="btn btn-success btn-sm">Candidatar-se</button>
+            {{!-- FAZER --}}
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{else}}
+
+<div class="d-flex justify-content-center align-items-center h-100 w-25 flex-column"
+    style="min-height: 90vh; max-width: 100vw; background-color: #e3cbcb;">
+    {{#each serviceData}}
+    <div class="card">
+
+        <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
+        <p>Descrição: {{dataValues.descricao}}</p>
+        <p>Categoria: {{dataValues.categoria}}</p>
+        <p>Contratante: {{dataValues.contratante}}</p>
+        <p>Valor: {{dataValues.valor}}</p>
+
+    </div>
+    {{/each}}
+</div>
+</div>
+
+{{/if}}
 </div>

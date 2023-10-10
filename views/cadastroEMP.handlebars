@@ -39,10 +39,9 @@
                     </div>
                     <div class="form-row d-flex flex-wrap justify-content-between">
                         <div class="form-group col-md-6">
-                            <label for="inputAddress2">CPF</label>
-                            <input type="text" class="form-control" id="RegraValida" value="" name="RegraValida"
-                                onkeydown="javascript: fMasc( this, mCPF );" placeholder="000.000.000-00" maxlength="14"
-                                required>
+                            <label for="inputAddress2">CNPJ</label>
+                            <input id="produto-1-cnpj" class="form-control rounded-form" type="text"
+                                placeholder="00.000.000/0001-00" maxlength="18" />
                         </div>
                         <div class="form-group col-md-6 inputC" style="width: 50%;">
                             <label for="inputAddress2">Nº Telefone</label>
@@ -50,7 +49,7 @@
                                 id="inputAdress2" placeholder="(00) 00000-0000" required>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="cepx">Cep:
+                            <label for="cepx">CEP:
                                 <input name="cep" class="form-control" type="text" id="cep" value="" maxlength="9"
                                     onblur="pesquisacep(this.value)" onkeyup="handleZipCode(event)" />
                             </label>
@@ -146,15 +145,11 @@
                 return value
             }
 
-            function ValidaCPF() {
-                var RegraValida = document.getElementById("RegraValida").value;
-                var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
-                if (cpfValido.test(RegraValida) == true) {
-                    console.log("CPF Válido");
-                } else {
-                    console.log("CPF Inválido");
-                }
-            }
+            document.getElementById('produto-1-cnpj').addEventListener('input', function (e) {
+                var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+                e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');
+            });
+
             function fMasc(objeto, mascara) {
                 obj = objeto
                 masc = mascara

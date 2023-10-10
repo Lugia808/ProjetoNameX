@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs')
 
 const Services = require('../models/Database/Services');
 const UserEMP = require('../models/Database/UserEMP')
+const User = require('../models/Database/User');
 
 router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
@@ -20,40 +21,95 @@ router.get('/', (req, res) => {
 
 });
 
-router.get('/home', (req, res) => {
-    //Home do técnico
-    if (!req.isAuthenticated()) {
+router.get('/home', async (req, res) => {
+    if (req.isAuthenticated()) {
+        const serviceData = await Services.findAll();
+        const UserType = await User.findOne({ where: { id: req.user.id } });
+        if (UserType) {
+            if (UserType.dataValues.tipo === 'tecnico') {
+                console.log('pegou')
+                const tec = 'tecnico'
+                res.render('homepage', {
+                    serviceData: serviceData,
+                    tec: tec,
+                    session: req.user.id
+                });
+            }
+            else {
+                res.render('homepage', {
+                    serviceData: serviceData,
+                    session: req.user.id
+                });
+            }
+            if (serviceData) {
+                console.log('teste')
+            }
+        }
+    }
+    else {
         res.redirect('/')
     }
-
-    var session = 1
-
-
-    res.render('homepage', {
-        session: session
-    })
 })
 
-router.post('/criarServico', (req, res) => {
-    // const { nomeServico, descricaoServico, valorServico, categoria } = req.body;
+router.post('/criarServico', async (req, res) => {
+    const { nomeServico, descricao, valorServico, categoria } = req.body;
+    try {
+        const user = await User.findOne({ where: { id: req.user.id } });
+        if (user) {
+            const userData = user.toJSON();
+            const createdService = await Services.create({
+                nomedoServico: nomeServico,
+                descricao: descricao,
+                categoria: categoria,
+                valor: valorServico,
+                contratante: userData.username,
+                situacao: 'vazio',
+            });
+            console.log('Serviço criado com sucesso!', createdService.toJSON());
+            res.redirect('/servicos')
+        } else {
+            console.log('Usuário não encontrado');
+            res.redirect('/home')
+        }
+    } catch (error) {
+        console.log('Ocorreu um erro ao criar o serviço:', error);
+        res.send('ERRO AHHAHAAHHAHAHHA')
+    }
+});
 
-    // UserEMP.findOne({
-    //     where: {
-    //         id: req.user.id
-    //     }
-    // }).then((result) => {
-    //     console.log(result)
-    //     Services.create({
-    //         nomeServico: nomeServico,
-    //         descricao: descricaoServico,
-    //         categoria: categoria,
-    //         valor: valorServico,
-    //     })
-    // })
-// AJEITAR
+router.get('/servicos', async (req, res) => {
+    if (req.isAuthenticated()) {
+        const serviceData = await Services.findAll();
+        const UserType = await User.findOne({ where: { id: req.user.id } });
+        if (UserType) {
+            if (UserType.dataValues.tipo === 'tecnico') {
+                console.log('pegou')
+                const tec = 'tecnico'
+                res.render('servicos', {
+                    serviceData: serviceData,
+                    tec: tec,
+                    session: req.user.id
+                });
+            }
+            else {
+                res.render('servicos', {
+                    serviceData: serviceData,
+                    session: req.user.id
+                });
+            }
+            if (serviceData) {
+                console.log('teste')
+            }
+        }
+    }
+    else {
+        res.redirect('/')
+    }
+});
 
 
-})
+
+
 
 router.get('/login', (req, res) => {
     res.render('login')

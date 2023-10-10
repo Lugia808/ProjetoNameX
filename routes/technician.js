@@ -34,8 +34,10 @@ router.post('/cadastro', async (req, res) => {
         password: senhahash
     }).then(() => {
         console.log('Conta criada com sucesso!')
-        res.redirect('/tec/login')
+        req.flash('success_msg', 'Conta criada com sucesso!');
+        res.redirect('/login')
     }).catch((error) => {
+        req.flash('error_msg', 'Nome de usuário ou e-mail já existente.');
         console.log('Ocorreu algum erro ao criar a conta: ' + error)
     })
 
