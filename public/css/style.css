@@ -77,11 +77,11 @@ p {
     font-weight: 700;
 }
 
-.form-group{
+.form-group {
     margin-bottom: 0.5rem !important;
 }
 
-label{
+label {
     margin-bottom: 0 !important;
 }
 
@@ -192,8 +192,8 @@ label{
         width: 40% !important
     }
 
-    #saibaMais{
-        margin-left:0vh !important;
+    #saibaMais {
+        margin-left: 0vh !important;
     }
 }
 
@@ -231,7 +231,7 @@ label{
 
     }
 
-    #logoImg{
+    #logoImg {
         width: 13% !important;
     }
 
@@ -244,32 +244,40 @@ label{
         background-color: rgb(55, 77, 152) !important;
         background-image: none !important;
     }
-    #success_msg{
+
+    #success_msg {
         width: 100% !important;
     }
-    #logoName{
+
+    #logoName {
         display: none !important;
     }
-    #linkLogin{
+
+    #linkLogin {
         width: 50% !important;
     }
-    #botaoL{
+
+    #botaoL {
         width: 100% !important;
         border-radius: 0;
     }
-    #botaoC{
+
+    #botaoC {
         width: 50% !important;
         border-radius: 0;
     }
-    .redes{
+
+    .redes {
         display: none !important;
     }
-    #divRedes{
+
+    #divRedes {
         width: 100% !important;
         display: flex;
         justify-content: center !important;
     }
-    #cardBody{
+
+    #cardBody {
         width: 100% !important;
     }
 }
@@ -285,10 +293,19 @@ label{
     }
 }
 
-        /* Estilos CSS personalizados */
-        .cardI {
-            transition: transform 0.2s; /* Adiciona uma transição suave ao efeito de zoom */
-        }
-        .cardI:hover {
-            transform: scale(1.1); /* Aplica um aumento de 10% no tamanho quando o mouse passa por cima */
-        }
+/* Estilos CSS personalizados */
+.cardI {
+    transition: transform 0.2s;
+    /* Adiciona uma transição suave ao efeito de zoom */
+}
+
+.cardI:hover {
+    transform: scale(1.1);
+    /* Aplica um aumento de 10% no tamanho quando o mouse passa por cima */
+}
+
+
+/* Estilo para mostrar a mensagem de erro quando necessário */
+.error-message.active {
+    display: block; /* Mostra a mensagem de erro quando a classe 'active' é adicionada */
+}

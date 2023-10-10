@@ -27,6 +27,6 @@ const UserEMP = sequelize.define('UserEMP', {
     tableName: 'userEmp', // Nome da tabela no banco de dados
 })
 
-//User.sync({force: true})
+//UserEMP.sync({force: true})
 
 module.exports = UserEMP
