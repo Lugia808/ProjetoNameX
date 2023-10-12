@@ -1,12 +1,12 @@
 <div class="d-flex flex-row" style="max-height: 80vh !important;">
-    <div class="d-flex justify-content-center align-items-center w-50" style="height: 90vh !important;">
+    <div class="d-flex justify-content-center align-items-center w-50" id="background_1" style="height: 90vh !important;">
         <div class="w-100 h-100"
             style="background-image: url(/images/SSTWpp.jpg); background-size:cover; background-position: 95%  !important;"
             id="background-img">
 
         </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center h-100 w-50">
+    <div class="d-flex justify-content-center align-items-center h-100 w-50" id="loginP">
         <div class="card w-100 d-flex justify-content-center align-items-center p-0 rounded-0" id="cardf"
             style="background-color: #E2E3E5; min-height: 90vh !important; border: none !important;">
             <div class="card-header w-100 text-center mt-3" style="border: none !important; background-color:#E2E3E5">
@@ -17,22 +17,22 @@
                     <div class="form-row d-flex flex-wrap justify-content-between">
                         <div class="form-group col-md-6 m-0">
                             <label for="inputUser">Usuário</label>
-                            <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="user"
+                            <input type="text" class="form-control form-control-sm" id="inputUser" placeholder="Usuário" name="user"
                                 required>
                         </div>
                         <div class="form-group col-md-6 inputC" style="width: 55%;">
                             <label for="inputEmail4">E-mail</label>
-                            <input type="email" class="form-control input-sm" id="inputEmail4" placeholder="E-mail"
+                            <input type="email" class="form-control form-control-sm input-sm" id="inputEmail4" placeholder="E-mail"
                                 name="email" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>
-                            <input type="password" class="form-control input-group-sm" id="senha" placeholder="Senha"
+                            <input type="password" class="form-control form-control-sm input-group-sm" id="senha" placeholder="Senha"
                                 name="senha" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="confirmPassword4">Confirmar Senha</label>
-                            <input type="password" class="form-control" id="senhaC" placeholder="Confirmar Senha"
+                            <input type="password" class="form-control form-control-sm" id="senhaC" placeholder="Confirmar Senha"
                                 style="width: 95% !important;" name="senhaC" required>
                             <span id="senhaMatch" class="text-success"></span>
                         </div>
@@ -40,36 +40,36 @@
                     <div class="form-row d-flex flex-wrap justify-content-between">
                         <div class="form-group col-md-6">
                             <label for="inputAddress2">CNPJ</label>
-                            <input id="produto-1-cnpj" class="form-control rounded-form" type="text"
+                            <input id="produto-1-cnpj" class="form-control form-control-sm rounded-form" type="text"
                                 placeholder="00.000.000/0001-00" maxlength="18" />
                         </div>
                         <div class="form-group col-md-6 inputC" style="width: 50%;">
                             <label for="inputAddress2">Nº Telefone</label>
-                            <input type="tel" maxlength="15" class="form-control" onkeyup="handlePhone(event)"
+                            <input type="tel" maxlength="15" class="form-control form-control-sm"  onkeyup="handlePhone(event)"
                                 id="inputAdress2" placeholder="(00) 00000-0000" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="cepx">CEP:
-                                <input name="cep" class="form-control" type="text" id="cep" value="" maxlength="9"
+                                <input name="cep" class="form-control form-control-sm" type="text" id="cep" value="" maxlength="9"
                                     onblur="pesquisacep(this.value)" onkeyup="handleZipCode(event)" />
                             </label>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="rua">Endereço:
-                                <input name="rua" class="form-control" type="text" id="rua" size="60" />
+                                <input name="rua" class="form-control form-control-sm" type="text" id="rua" size="60" />
                             </label>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="bairro">Bairro:
-                                <input name="bairro" class="form-control" type="text" id="bairro" /></label>
+                                <input name="bairro" class="form-control form-control-sm" type="text" id="bairro" /></label>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="cidade">Cidade:
-                                <input name="cidade" class="form-control" type="text" id="cidade" /></label>
+                                <input name="cidade" class="form-control form-control-sm" type="text" id="cidade" /></label>
                         </div>
                         <div class="form-group col-md-4">
                             UF:
-                            <input name="uf" type="text" id="uf" size="2" class="form-control" />
+                            <input name="uf" type="text" id="uf" size="2" class="form-control form-control-sm" />
                         </div>
                     </div>
 

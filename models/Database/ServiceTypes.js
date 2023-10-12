@@ -1,27 +1,37 @@
-const { sequelize, Sequelize } = require('./Database')
+const { sequelize, Sequelize } = require('./Database');
+const Categoria = require('./Categoria'); // Importe o modelo da Categoria
 
 const ServiceTypes = sequelize.define('Services', {
   nomedoServico: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
   },
   descricao: {
     type: Sequelize.STRING,
     allowNull: false,
-
   },
-  categoria: {
-    type: Sequelize.STRING,
+  basePreco: {
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
-  basePreco:{
+  // Adicione a chave estrangeira para a tabela Categoria
+  categoriaId: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: Categoria,
+      key: 'id', // Chave primária da tabela Categoria
+    },
   },
 }, {
-  tableName: 'servicesTypes', // Nome da tabela no banco de dados
-})
+  tableName: 'servicesTypes',
+});
 
 //ServiceTypes.sync({force: true})
 
-module.exports = ServiceTypes
+// Defina a relação entre Services e Categoria
+ServiceTypes.belongsTo(Categoria, { foreignKey: 'categoriaId', as: 'categoria' });
+
+
+
+module.exports = ServiceTypes;

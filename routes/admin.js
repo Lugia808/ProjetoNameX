@@ -8,6 +8,7 @@ const User = require('../models/Database/User');
 const serviceTypes = require('../models/Database/ServiceTypes');
 const Categoria = require('../models/Database/Categoria');
 const ServiceTypes = require('../models/Database/ServiceTypes');
+const UserTEC = require('../models/Database/UserTEC');
 
 router.get('/cadastrarservico', async (req, res) => {
     if (req.isAuthenticated()) {
@@ -33,15 +34,22 @@ router.get('/cadastrarservico', async (req, res) => {
     }
 })
 
-router.post('/cadastrarservico', (req, res) => {
+router.post('/cadastrarservico', async (req, res) => {
 
     const { nomedoServico, descricao, categoria, basePreco } = req.body
+    const CategoriaData = await Categoria.findAll({
+        where: {
+            nomedacategoria: categoria
+        }
+    })
 
+    console.log(CategoriaData[0].id)
     ServiceTypes.create({
         nomedoServico: nomedoServico,
         descricao: descricao,
         categoria: categoria,
-        basePreco: basePreco
+        basePreco: basePreco,
+        categoriaId: CategoriaData[0].id
     }).then(() => {
         req.flash('success_msg', 'Tipo de serviço criado com sucesso!');
         res.redirect('/admin/cadastrarservico')
@@ -178,4 +186,80 @@ router.get(`/deleteServico/:id`, async (req, res) => {
     })
 
 })
+
+
+router.get('/validarTEC', async (req, res) => {
+    if (req.isAuthenticated()) {
+        const Admin = await User.findOne({
+            where: {
+                id: req.user.id,
+                tipo: 'admin'
+            }
+        })
+        if (Admin) {
+            try {
+                const TecInfo = await UserTEC.findAll({
+                    where: {
+                        situacao: 'pendente'
+                    },
+                    include: [
+                        {
+                            model: User,
+                            as: 'UserKey', // Use o alias definido na relação
+                            attributes: ['username'] // Especifique quais atributos da tabela User deseja buscar
+                        }
+                    ]
+                });
+
+                const TecInfoAprovados = await UserTEC.findAll({
+                    where: {
+                        situacao: 'aprovado'
+                    },
+                    include: [
+                        {
+                            model: User,
+                            as: 'UserKey', // Use o alias definido na relação
+                            attributes: ['username'] // Especifique quais atributos da tabela User deseja buscar
+                        }
+                    ]
+                });
+
+                // O resultado da consulta conterá o username da tabela User
+                res.render('validacao', {
+                    TecInfo: TecInfo,
+                    TecInfoAprovados: TecInfoAprovados
+                });
+            } catch (error) {
+                // Lida com erros, se houver algum
+                res.status(500).send('Erro ao buscar usuários pendentes');
+            }
+        }else{
+            res.redirect('/')
+        }
+    }
+    else {
+        res.redirect('/')
+    }
+});
+
+router.get('/validarUsuario/:userId', async (req, res) => {
+    const userId = req.params.userId;
+
+    try {
+        // Atualize o status do usuário para 'aprovado' (ou o valor desejado) no banco de dados
+        const user = await UserTEC.findByPk(userId);
+        if (user) {
+            user.situacao = 'aprovado'; // Atualize para o valor desejado
+            await user.save();
+            req.flash('success_msg', 'Validação concluída com sucesso!');
+            res.redirect('/admin/validarTEC');
+        }
+    } catch (error) {
+        req.flash('error_msg', 'Ocorreu um erro ao validar o profissional.');
+        res.redirect('/admin/validarTEC');
+    }
+});
+
+
+
 module.exports = router

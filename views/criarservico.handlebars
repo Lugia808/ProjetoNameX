@@ -1,0 +1,25 @@
+<div class="w-100 d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="card w-75" style="max-height: 80vh !important; background-color: #E2E3E5 !important">
+
+        <div class="card-header" style="background-color: #E2E3E5;">
+            <h5 class="card-title">Criar Novo Serviço</h5>
+        </div>
+        <div class="card-body h-100">
+
+            <form action="/criarServico" method="post">
+                <div class="mb-3  text-center">
+                    <label for="categoriaServico" class="form-label">Categoria</label>
+                    <select class="form-select mt-5 mb-5" id="categoriaServico" name="categoria">
+                        {{#each CategoriaData}}
+                        <option value="{{dataValues.nomedacategoria}}">{{dataValues.nomedacategoria}}</option>
+                        {{/each}}
+                    </select>
+                <button type="submit" class="btn btn-primary">Criar Serviço</button>
+            </form>
+
+
+
+        </div>
+    </div>
+
+</div>

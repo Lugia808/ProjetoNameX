@@ -280,6 +280,13 @@ label {
     #cardBody {
         width: 100% !important;
     }
+
+    #background_1{
+        display: none !important;
+    }
+    #loginP{
+        width: 100% !important;
+    }
 }
 
 /* CSS for mobile devices (screen width less than 768px) */

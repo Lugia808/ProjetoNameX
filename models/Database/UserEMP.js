@@ -1,4 +1,5 @@
-const { sequelize, Sequelize } = require('./Database')
+const { sequelize, Sequelize } = require('./Database');
+
 
 const UserEMP = sequelize.define('UserEMP', {
     id: {
@@ -19,15 +20,13 @@ const UserEMP = sequelize.define('UserEMP', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    codigo: {
-        type: Sequelize.STRING,
-        
-    }
 
 }, {
     tableName: 'userEmp', // Nome da tabela no banco de dados
 })
 
 //UserEMP.sync({force: true})
+
+
 
 module.exports = UserEMP

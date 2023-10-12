@@ -12,7 +12,7 @@
 
         </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center w-50"
+    <div class="d-flex justify-content-center align-items-start w-50"
         style="min-height: 90vh !important; max-height:90vh !important;height:90vh; max-width: 100vw; background-color: #f76d6d;">
         <div class="w-75 p-3">
             <div class="card w-100" style="max-height: 80vh !important;">
@@ -20,37 +20,12 @@
                     <div class="card-header">
                         <h5 class="card-title">Criar Novo Serviço</h5>
                     </div>
-                    <div class="card-body">
-                        <form action="/criarServico" method="post">
-                            <div class="mb-3">
-                                <label for="categoriaServico" class="form-label">Categoria</label>
-                                <select class="form-select" id="categoriaServico" name="categoria">
-                                    {{#each CategoriaData}}
-                                    <option value="1">{{dataValues.nomedacategoria}}</option>
-                                    {{/each}}
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nomeServico" class="form-label">Nome do Serviço</label>
-                                <select name="nomeServico" class="form-control" id="servico">
+                    <div class="card-body h-100">
 
-                                    {{#each serviceTypes}}
-                                    <option value="{{dataValues.nomedoServico}}">{{dataValues.nomedoServico}}</option>
-                                    {{/each}}
+                        <div class="w-100 bg-primary d-flex justify-content-center align-items-center" style="height: 10vh;">
+                            <a href="/criarServico"><button class="btn btn-light btn-sm"><i class="bi bi-plus-circle"></i> Criar Serviço </button></a>
+                        </div>
 
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="descricaoServico" class="form-label">Descrição</label>
-                                <input type="text" name="descricao">
-                            </div>
-                            <div class="mb-3">
-                                <label for="valorServico" class="form-label">Valor</label>
-                                <input type="text" class="form-control" id="valorServico"
-                                    placeholder="Digite o valor do serviço" name="valorServico">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Criar Serviço</button>
-                        </form>
                     </div>
                 </div>
 
