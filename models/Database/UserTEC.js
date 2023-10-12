@@ -23,6 +23,6 @@ const UserTEC = sequelize.define('UserTEC', {
     tableName: 'userTec', // Nome da tabela no banco de dados
 })
 
-//User.sync({force: true})
+//UserTEC.sync({force: true})
 
 module.exports = UserTEC

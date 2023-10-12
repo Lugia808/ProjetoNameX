@@ -21,6 +21,7 @@ const UserEMP = sequelize.define('UserEMP', {
     },
     codigo: {
         type: Sequelize.STRING,
+        
     }
 
 }, {

@@ -1,0 +1,45 @@
+{{#if error}}
+<div class="alert alert-warning w-100 error-message">{{error}}</div>
+{{/if}}
+{{#if success_msg}}
+
+<div class="alert alert-success w-100 success-message text-center">
+    <p>{{success_msg}}</p>
+</div>
+{{/if}}
+<div class="w-100 d-flex mt-5" style="min-height: 80vh !important;">
+    <div class="w-50 d-flex align-items-center flex-column">
+        <div class="w-75 h-100 p-3 rounded-1" style="background-color: #E2E3E5;">
+            <a href="/admin/cadastrarcategoria"><button class="btn w-100 btn-primary">Criar Categorias</button></a>
+            {{#each CategoriaData}}
+            <div class="card w-100 mt-3">
+                <div class="card-body w-100">
+                    <h6>{{dataValues.nomedacategoria}}</h6>
+                    <p>{{dataValues.descricao}}</p>
+
+                    <a href="/admin/deleteCategoria/{{dataValues.id}}"><button
+                            class="btn btn-danger">delete</button></a>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="w-50 d-flex align-items-center flex-column">
+        <div class="w-75 h-100 p-3 rounded-1" style="background-color: #E2E3E5;">
+            <a href="/admin/cadastrarcategoria"><button class="btn w-100 btn-primary">Criar Tipo de Serviço</button></a>
+            {{#each ServiceTypesData}}
+            <div class="card w-100 mt-3">
+                <div class="card-body w-100">
+                    <h6>{{dataValues.nomedoServico}}</h6>
+                    <p>{{dataValues.descricao}}</p>
+                    <a href="/admin/deleteServico/{{dataValues.id}}"><button class="btn btn-danger">delete</button></a>
+                </div>
+
+            </div>
+            {{/each}}
+
+        </div>
+
+    </div>
+</div>

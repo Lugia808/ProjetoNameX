@@ -1,6 +1,6 @@
 const { sequelize, Sequelize } = require('./Database')
 
-const Services = sequelize.define('Services', {
+const ServiceTypes = sequelize.define('Services', {
   nomedoServico: {
     type: Sequelize.STRING,
     allowNull: false
@@ -14,22 +14,14 @@ const Services = sequelize.define('Services', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  contratante: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  valor:{
+  basePreco:{
     type: Sequelize.INTEGER,
     allowNull: false
   },
-  situacao:{
-    type: Sequelize.STRING,
-    allowNull: false
-  }
 }, {
-  tableName: 'services', // Nome da tabela no banco de dados
+  tableName: 'servicesTypes', // Nome da tabela no banco de dados
 })
 
-//Services.sync({force: true})
+//ServiceTypes.sync({force: true})
 
-module.exports = Services
+module.exports = ServiceTypes

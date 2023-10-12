@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center align-items-center" style=" height: 88vh;">
+    <div class="card w-50">
+        <div class="card-body">
+            {{#if error}}
+            <div class="alert alert-warning w-100 error-message">{{error}}</div>
+            {{/if}}
+            {{#if success_msg}}
+
+            <div class="alert alert-success w-100 success-message text-center">
+                <p>{{success_msg}}</p>
+            </div>
+            {{/if}}
+            <h1>Cadastro de Categorias</h1>
+            <form action="/admin/cadastrarcategoria" method="post">
+                <div class="form-group">
+                    <label for="nome-categoria">Nome da Categoria</label>
+                    <input type="text" id="nome-categoria" name="categoria" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao-cateogira">Descrição</label>
+                    <textarea id="descricao-categoria" name="descricao" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+        </form>
+    </div>
+</div>
