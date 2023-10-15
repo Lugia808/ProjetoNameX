@@ -3,6 +3,7 @@ const router = express.Router();
 const { sequelize, Sequelize } = require('../models/Database/Database')
 const passport = require('passport');
 const bcrypt = require('bcryptjs')
+require('dotenv').config(); 
 
 const User = require('../models/Database/User');
 const UserTEC = require('../models/Database/UserTEC');
