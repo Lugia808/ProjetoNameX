@@ -22,7 +22,8 @@
             </li>
         </ul>
     </div>
-    <a href="/tec/perfil"><button class="btn text-white" style="margin-right: 2vh; background-color:#EA9B1C">Perfil <i class="bi bi-person-circle"></i></button></a>
+    <a href="/tec/perfil"><button class="btn text-white" style="margin-right: 2vh; background-color:#EA9B1C">Perfil <i
+                class="bi bi-person-circle"></i></button></a>
     <a href="/tec/logout"><button class="btn text-white" style="margin-right: 2vh; background-color: #003C5F">Sair <i
                 class="bi bi-door-closed-fill"></i></button></a>
 </nav>
@@ -37,18 +38,15 @@
 {{!-- NAO LOGADO --}}
 
 {{!-- TECNICO OU EMPRESA? --}}
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #F2F9FF !important;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="/images/logo_sem_nome.svg" class=" rounded-5" id="logoImg" style="width: 4%; margin-left: 1.5vh">
+    <img src="/images/logo_sem_nome.svg" class="rounded-5" id="logoImg" style="width: 4%; margin-left: 1.5vh">
     <a class="navbar-brand" href="/">
-
         <p id="logoName" class="m-0">TeConnect</p>
     </a>
-
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
@@ -59,34 +57,22 @@
             </li>
         </ul>
     </div>
-
-
-    <!-- Button to toggle the navigation menu -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo04"
-        aria-controls="navbarTogglerDemo04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="bi-person-circle"></span>
-    </button>
-
-    <!-- Navigation menu that collapses and expands -->
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo04">
-        <!-- Add your second navigation menu items here -->
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item d-flex">
-
-                <a href="/login" id="linkLogin">
-                    <button class="btn text-white" id="botaoL"
-                        style="margin-right: 0.5vh; background-color: #003C5F">Login <i
-                            class="bi bi-person-check-fill"></i></button>
-                </a>
-                <button class="btn text-white" id="botaoC" data-toggle="modal" data-target="#exampleModalCenter"
-                    style="margin-right: 2vh; background-color:#EA9B1C">Cadastro <i
-                        class="bi bi-person-add"></i></button>
-            </li>
-        </ul>
+    <div class="ml-lg-auto d-lg-none"> <!-- Display on large screens -->
+        <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="background-color: #003C5F; margin-right: 1% !important">
+            <i class="bi-person-circle"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/login">Login <i class="bi bi-person-check-fill"></i></a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalCenter">Cadastro <i
+                class="bi bi-person-add"></i></a>
+        </div>
     </div>
-
+    <div class="ml-lg-auto d-lg-block d-none"> <!-- Display on larger screens, not on small screens -->
+        <a href="/login"><button class="btn text-white" style="background-color: #003C5F; margin-right: 1vh;">Login</button></a>
+        <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><button class="btn text-white" style="background-color:#EA9B1C; margin-right: 1vh;">Cadastro</button></a>
+    </div>
 </nav>
-
 
 {{/if}}
 

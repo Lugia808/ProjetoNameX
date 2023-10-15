@@ -61,23 +61,25 @@
                         <div class="form-group col-md-4">
                             <label for="cepx">Cep:
                                 <input name="cep" class="form-control" type="text" id="cep" value="" maxlength="9"
-                                    onblur="pesquisacep(this.value) " onkeyup="handleZipCode(event)" /></label>
+                                    onblur="pesquisacep(this.value) " onkeyup="handleZipCode(event)" required></label>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="rua">Endereço:
-                                <input name="rua" class="form-control" type="text" id="rua" size="60" /></label>
+                                <input name="rua" class="form-control" type="text" id="rua" size="60" required></label>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="bairro">Bairro:
-                                <input name="bairro" class="form-control" type="text" id="bairro" /></label>
+                                <input name="bairro" class="form-control" type="text" id="bairro" required></label>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="cidade">Cidade:
-                                <input name="cidade" class="form-control" type="text" id="cidade" /></label>
+                                <input name="cidade" class="form-control" type="text" id="cidade" required></label>
                         </div>
                         <div class="form-group col-md-4">
                             UF:
-                            <input name="uf" type="text" id="uf" size="2" class="form-control" />
+                            <input name="uf" class="form-control" type="text" id="uf" maxlength="2"
+                                onblur="validarUF(this)" placeholder="UF" required>
+
                         </div>
                     </div>
                     <br>
@@ -291,6 +293,22 @@
         }
     }
 
+    function validarUF(input) {
+        // Converte o valor do campo para letras maiúsculas
+        let uf = input.value.toUpperCase();
+
+        // Verifica se a UF é válida (considere apenas as UF do Brasil)
+        const ufsValidas = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+
+        if (ufsValidas.includes(uf)) {
+            // A UF é válida, mantenha o valor original
+            input.value = uf;
+        } else {
+            // UF inválida, redefina o campo
+            input.value = "";
+            alert("UF inválida. Por favor, insira uma UF válida.");
+        }
+    }
 
 
 </script>

@@ -32,6 +32,7 @@ var message = []
     }))
 
     passport.serializeUser((user, done) => {
+        console.log('pegando serializando')
         done(null, user.id)
     })
 

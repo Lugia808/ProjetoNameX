@@ -16,7 +16,7 @@ router.get('/cadastrarservico', async (req, res) => {
         if (UserType) {
             const Categorias = await Categoria.findAll()
             if (UserType.dataValues.tipo === 'admin') {
-                res.render('cadastrarServico', {
+                res.render('admin/cadastrarServico', {
                     admin: 'admin',
                     session: req.user.id,
                     Categorias: Categorias
@@ -68,7 +68,7 @@ router.get('/cadastrarcategoria', async (req, res) => {
         if (UserType) {
             console.log(UserType.dataValues.tipo)
             if (UserType.dataValues.tipo === 'admin') {
-                res.render('cadastrarCategoria', {
+                res.render('admin/cadastrarCategoria', {
                     admin: 'admin',
                     session: req.user.id
                 });
@@ -102,7 +102,7 @@ router.post('/cadastrarcategoria', (req, res) => {
 })
 
 router.get('/cadastro', (req, res) => {
-    res.render('cadastroTECp1')
+    res.render('Tec/cadastroTECp1') //cadastro admin
 })
 
 
@@ -136,7 +136,7 @@ router.post('/cadastro', async (req, res) => {
 router.get('/home', (req, res) => {
     if (req.isAuthenticated()) {
         const tec = 'admin'
-        res.render('adminHome', {
+        res.render('admin/adminHome', {
             tec: tec,
             session: req.user.id,
         })
@@ -150,7 +150,7 @@ router.get('/delete', async (req, res) => {
     const CategoriaData = await Categoria.findAll();
     const ServiceTypesData = await ServiceTypes.findAll();
     const tec = 'admin'
-    res.render('delete', {
+    res.render('admin/delete', {
         CategoriaData: CategoriaData,
         ServiceTypesData: ServiceTypesData,
         tec: tec,
@@ -168,7 +168,7 @@ router.get(`/deleteCategoria/:id`, async (req, res) => {
         res.redirect('/admin/delete')
     }).catch((error) => {
         req.flash('error_msg', 'Ocorreu um erro ao criar a categoria.');
-        console.log('Ocorreu algum erro ao criar a categoria: ' + error)
+        res.redirect('/admin/delete')
     })
 
 })
@@ -225,7 +225,7 @@ router.get('/validarTEC', async (req, res) => {
                 });
 
                 // O resultado da consulta conterá o username da tabela User
-                res.render('validacao', {
+                res.render('admin/validacao', {
                     TecInfo: TecInfo,
                     TecInfoAprovados: TecInfoAprovados
                 });

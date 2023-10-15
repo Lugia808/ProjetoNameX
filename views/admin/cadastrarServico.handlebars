@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center align-items-center" style=" height: 88vh;">
+    <div class="card w-50">
+        <div class="card-body">
+            {{#if error}}
+            <div class="alert alert-warning w-100 error-message">{{error}}</div>
+            {{/if}}
+            {{#if success_msg}}
+
+            <div class="alert alert-success w-100 success-message text-center">
+                <p>{{success_msg}}</p>
+            </div>
+            {{/if}}
+            <h1>Cadastro de Serviços</h1>
+            <form action="/admin/cadastrarservico" method="post">
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" name="categoria" class="form-control" required>
+                        <option selected>Selecione uma opção</option>
+                        {{#each Categorias}}
+                        <option value="{{dataValues.nomedacategoria}}">{{dataValues.nomedacategoria}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nomedoServico">Nome do Serviço</label>
+                    <input type="text" id="nomedoServico" name="nomedoServico" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="valor-servico">Base do preço</label>
+                    <input type="text" id="valor-servico" name="basePreco" class="form-control" placeholder="1 ~ 100%"
+                        required>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
+
+<script>
+    document.getElementById('valor-servico').addEventListener('input', function (e) {
+        let value = e.target.value;
+
+        // Remove todos os caracteres não numéricos
+        value = value.replace(/[^0-9]/g, '');
+
+        // Converte o valor para um número inteiro
+        let numericValue = parseInt(value);
+
+        // Limita o valor a 100
+        if (numericValue > 100) {
+            numericValue = 100;
+        }
+
+        // Adicione o símbolo de porcentagem
+        if (numericValue) {
+            e.target.value = numericValue + '%';
+        } else {
+            e.target.value = '';
+        }
+    });
+
+</script>
