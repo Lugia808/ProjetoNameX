@@ -338,6 +338,14 @@ hr{
     #loginP{
         width: 100% !important;
     }
+    #columnV{
+        width: 50% !important;
+        flex-direction: column
+    }
+    #columnsV{
+        width: 50% !important;
+        ;
+    }
 }
 
 /* CSS for mobile devices (screen width less than 768px) */
@@ -356,3 +364,4 @@ hr{
 .error-message.active {
     display: block; /* Mostra a mensagem de erro quando a classe 'active' é adicionada */
 }
+

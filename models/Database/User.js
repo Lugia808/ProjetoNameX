@@ -22,14 +22,21 @@ const User = sequelize.define('User', {
   password: {
     type: Sequelize.STRING,
     allowNull: false
-  },
-  
+  }
 }, {
   tableName: 'users', // Nome da tabela no banco de dados
 })
 
 //User.sync({force: true})
-
+// ,
+//   CEP:{
+//     type: Sequelize.STRING,
+//     allowNull: false
+//   },
+//   Endereço //Colocar numero da casa
+//   :{
+    
+//   }
 
 
 module.exports = User

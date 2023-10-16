@@ -1,3 +1,132 @@
+{{#if tec}}
+
+<div class="row flex-nowrap" style="max-height: 100% !important;">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light d-flex" style="max-height: 90vh !important;">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white ml-3"
+            style="max-height: 100% !important;">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-5 d-none d-sm-inline">
+                    <h6><i class="bi bi-globe-americas"></i> Região (ajeitar back-end)</h6>
+                </span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                    </a>
+                    <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                        <li class="w-100">
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Serviços</span></a>
+                </li>
+                <li>
+                    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                    <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                        <li class="w-100">
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Empresas</span> </a>
+                </li>
+            </ul>
+            <div class="dropdown pb-4">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="#" alt="IMG" width="30" height="30" class="rounded-circle">
+                    <span class="d-none d-sm-inline mx-1">USUARIO</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-start w-50"
+        style="min-height: 90vh !important; max-height:90vh !important;height:90vh; max-width: 100vw; background-color: #f76d6d;">
+        <div class="w-75 p-3">
+            <div class="card w-100" style="max-height: 80vh !important;">
+
+                <div class="card-header">
+                    <h5 class="card-title">Candidatura do técnico</h5>
+                </div>
+                <div class="card-body h-100 w-100">
+
+                    <div class="d-flex justify-content-center align-items-center h-100 w-100 flex-column">
+
+                        <h6>Serviços próximos</h6>
+
+                        {{#each serviceData}}
+                        <div class="card w-100 mb-4" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Descrição: {{dataValues.descricao}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Categoria: {{dataValues.categoria}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Contratante: {{dataValues.contratante}}</p>
+                                </div>
+                            </div>
+                            <p>Valor: {{dataValues.valor}}</p>
+                            <button class="btn btn-success btn-sm">Candidatar-se</button>
+                            {{!-- FAZER --}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-100 d-flex">
+
+
+</div>
+
+
+
+{{else}}
+
 <div class="w-100 d-flex">
     <div class="d-flex justify-content-center align-items-center h-100 w-25 d-flex flex-column"
         style="min-height: 90vh;height:100vh; max-width: 100vw; background-color: #ececec;">
@@ -17,58 +146,38 @@
         <div class="w-75 p-3">
             <div class="card w-100" style="max-height: 80vh !important;">
 
-                    <div class="card-header">
-                        <h5 class="card-title">Criar Novo Serviço</h5>
-                    </div>
-                    <div class="card-body h-100">
-
-                        <div class="w-100 bg-primary d-flex justify-content-center align-items-center" style="height: 10vh;">
-                            <a href="/criarServico"><button class="btn btn-light btn-sm"><i class="bi bi-plus-circle"></i> Criar Serviço </button></a>
-                        </div>
-
-                    </div>
+                <div class="card-header">
+                    <h5 class="card-title">Criar Novo Serviço</h5>
                 </div>
+                <div class="card-body h-100">
 
+                    <div class="w-100 bg-primary d-flex justify-content-center align-items-center"
+                        style="height: 10vh;">
+                        <a href="/criarServico"><button class="btn btn-light btn-sm"><i class="bi bi-plus-circle"></i>
+                                Criar Serviço </button></a>
+                    </div>
+
+                </div>
             </div>
+
+        </div>
 
     </div>
 
-
-    {{#if tec}}
-
     <div class="d-flex justify-content-center align-items-center h-100 w-25 flex-column"
-        style="min-height: 90vh; max-width: 100vw; background-color: #e3cbcb; overflow:auto;">
+        style="min-height: 90vh; max-width: 100vw; background-color: #e3cbcb;">
         {{#each serviceData}}
-        <div class="card mb-4">
+        <div class="card">
 
             <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
             <p>Descrição: {{dataValues.descricao}}</p>
             <p>Categoria: {{dataValues.categoria}}</p>
             <p>Contratante: {{dataValues.contratante}}</p>
             <p>Valor: {{dataValues.valor}}</p>
-            <button class="btn btn-success btn-sm">Candidatar-se</button>
-            {{!-- FAZER --}}
+
         </div>
         {{/each}}
     </div>
-</div>
-
-{{else}}
-
-<div class="d-flex justify-content-center align-items-center h-100 w-25 flex-column"
-    style="min-height: 90vh; max-width: 100vw; background-color: #e3cbcb;">
-    {{#each serviceData}}
-    <div class="card">
-
-        <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
-        <p>Descrição: {{dataValues.descricao}}</p>
-        <p>Categoria: {{dataValues.categoria}}</p>
-        <p>Contratante: {{dataValues.contratante}}</p>
-        <p>Valor: {{dataValues.valor}}</p>
-
-    </div>
-    {{/each}}
-</div>
 </div>
 
 {{/if}}

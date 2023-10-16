@@ -44,7 +44,6 @@ router.get('/', async (req, res) => {
             res.redirect('/admin/home');
         }
         else {
-
             if (UserData) {
                 if (UserTypes === 'tecnico') {
 

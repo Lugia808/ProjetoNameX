@@ -135,9 +135,10 @@ router.post('/cadastro', async (req, res) => {
 
 router.get('/home', (req, res) => {
     if (req.isAuthenticated()) {
-        const tec = 'admin'
+        console.log('olha eu aqui')
+        const admin = 'admin'
         res.render('admin/adminHome', {
-            tec: tec,
+            admin: admin,
             session: req.user.id,
         })
     }
@@ -162,7 +163,7 @@ router.get('/delete', async (req, res) => {
 router.get(`/deleteCategoria/:id`, async (req, res) => {
 
     await Categoria.destroy({
-        where: { id: req.params.id }
+        where: {id: req.params.id}
     }).then(() => {
         req.flash('success_msg', 'Categoria deletada com sucesso!');
         res.redirect('/admin/delete')
@@ -176,7 +177,7 @@ router.get(`/deleteCategoria/:id`, async (req, res) => {
 router.get(`/deleteServico/:id`, async (req, res) => {
 
     await ServiceTypes.destroy({
-        where: { id: req.params.id }
+        where: { id: req.params.id}
     }).then(() => {
         req.flash('success_msg', 'Tipo de serviço deletado com sucesso!');
         res.redirect('/admin/delete')
@@ -205,8 +206,8 @@ router.get('/validarTEC', async (req, res) => {
                     include: [
                         {
                             model: User,
-                            as: 'UserKey', // Use o alias definido na relação
-                            attributes: ['username'] // Especifique quais atributos da tabela User deseja buscar
+                            as: 'UserKey', // usar o alias definido na relação
+                            attributes: ['username'] // Aqui c tem que especificar  oq c quer da tabela
                         }
                     ]
                 });
