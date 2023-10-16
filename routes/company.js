@@ -30,7 +30,8 @@ router.post('/cadastro', async (req, res) => {
             res.redirect('/login');
         })
         .catch((error) => {
-            req.flash('error_msg','Nome de usuário ou e-mail já existente');
+            req.flash('error_msg', 'Nome de usuário ou e-mail já existente');
+            console.log('Ocorrreu um erro: '+ error)
             res.redirect('/company/cadastro')
         });
 });
