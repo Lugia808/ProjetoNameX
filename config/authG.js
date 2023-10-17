@@ -4,8 +4,10 @@ const User = require('../models/Database/User')
 module.exports = function (passportG) {
 
     passport.use(new GoogleStrategy({
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        clientID: //process.env.GOOGLE_CLIENT_ID,
+        '770354001527-aa04kkqtvmqf347jhhmtmu08toll4q1t.apps.googleusercontent.com',
+        clientSecret: //process.env.GOOGLE_CLIENT_SECRET,
+        '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',
         callbackURL: "http://localhost:8080/callback",
     }, function (accessToken, refreshToken, profile, done) {
         // Extraia informações relevantes do perfil do Google

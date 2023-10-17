@@ -186,18 +186,16 @@ router.post('/criarServico', async (req, res) => {
 
         console.log(CategoriaData.dataValues.id)
 
-
         const ServiceTypesData = await ServiceTypes.findAll({
             where: {
                 categoriaId: CategoriaData.dataValues.id
             }
         })
 
-        console.log(ServiceTypesData)
-
         res.render('criarservicop2', {
             ServiceTypesData: ServiceTypesData,
-            categoria: categoria
+            categoria: categoria,
+            session: req.user.id
         })
 
     }

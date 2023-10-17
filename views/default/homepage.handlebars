@@ -73,15 +73,15 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center align-items-start w-50"
+    <div class="d-flex justify-content-center align-items-start w-50 p-0"
         style="min-height: 90vh !important; max-height:90vh !important;height:90vh; max-width: 100vw; background-color: #f76d6d;">
-        <div class="w-75 p-3">
-            <div class="card w-100" style="max-height: 80vh !important;">
+        <div class="w-100 p-0 m-0">
+            <div class="card rounded-0 w-100" style="max-height: 90vh !important;">
 
                 <div class="card-header">
                     <h5 class="card-title">Candidatura do técnico</h5>
                 </div>
-                <div class="card-body h-100 w-100">
+                <div class="card-body h-100 w-100" style="overflow: auto;">
 
                     <div class="d-flex justify-content-center align-items-center h-100 w-100 flex-column">
 
@@ -107,7 +107,11 @@
                                 </div>
                             </div>
                             <p>Valor: {{dataValues.valor}}</p>
-                            <button class="btn btn-success btn-sm">Candidatar-se</button>
+                            <div>
+                                <button class="btn btn-success btn-sm">Candidatar-se</button>
+
+                                <button class="btn btn-primary btn-sm">Detalhes</button>
+                            </div>
                             {{!-- FAZER --}}
                         </div>
                         {{/each}}
@@ -142,19 +146,19 @@
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-start w-50"
-        style="min-height: 90vh !important; max-height:90vh !important;height:90vh; max-width: 100vw; background-color: #f76d6d;">
+        style="min-height: 90vh !important; max-height:90vh !important;height:90vh; max-width: 100vw; background-color:#e3cbcb;">
         <div class="w-75 p-3">
-            <div class="card w-100" style="max-height: 80vh !important;">
+            <div class="card rounded-0 w-100" style="max-height: 90vh !important;">
 
                 <div class="card-header">
-                    <h5 class="card-title">Criar Novo Serviço</h5>
+                    <h5 class="card-title">Solicitar Serviços</h5>
                 </div>
-                <div class="card-body h-100">
+                <div class="card-body h-100 w-100" style="overflow: auto;">
 
-                    <div class="w-100 bg-primary d-flex justify-content-center align-items-center"
+                    <div class="d-flex justify-content-center align-items-center h-100 w-100 flex-column"
                         style="height: 10vh;">
-                        <a href="/criarServico"><button class="btn btn-light btn-sm"><i class="bi bi-plus-circle"></i>
-                                Criar Serviço </button></a>
+                        <a href="/criarServico"><button class="btn btn-success btn-xl"><i class="bi bi-plus-circle"></i>
+                                Solicitar </button></a>
                     </div>
 
                 </div>
@@ -164,19 +168,12 @@
 
     </div>
 
-    <div class="d-flex justify-content-center align-items-center h-100 w-25 flex-column"
-        style="min-height: 90vh; max-width: 100vw; background-color: #e3cbcb;">
-        {{#each serviceData}}
-        <div class="card">
-
-            <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
-            <p>Descrição: {{dataValues.descricao}}</p>
-            <p>Categoria: {{dataValues.categoria}}</p>
-            <p>Contratante: {{dataValues.contratante}}</p>
-            <p>Valor: {{dataValues.valor}}</p>
-
+    <div class="d-flex justify-content-start w-25 flex-column"
+        style="min-height: 90vh; max-height:90vh; overflow: auto; max-width: 100vw; background-color: #ffffff; ">
+        <div class="bg-primary w-100 text-center p-4">
+        <h5>Candidaturas</h5>
         </div>
-        {{/each}}
+        CANDIDATOS (APROVAR SIM OU N DETALHES E ETC)
     </div>
 </div>
 

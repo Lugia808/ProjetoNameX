@@ -42,7 +42,6 @@ router.post('/cadastrarservico', async (req, res) => {
             nomedacategoria: categoria
         }
     })
-
     console.log(CategoriaData[0].id)
     ServiceTypes.create({
         nomedoServico: nomedoServico,
@@ -54,8 +53,8 @@ router.post('/cadastrarservico', async (req, res) => {
         req.flash('success_msg', 'Tipo de serviço criado com sucesso!');
         res.redirect('/admin/cadastrarservico')
     }).catch((error) => {
-        req.flash('error_msg', 'Ocorreu um erro ao criar o serviço.');
         console.log('Ocorreu algum erro ao criar o tipo de serviço: ' + error)
+        req.flash('error_msg', 'Ocorreu um erro ao criar o serviço.');
         res.redirect('/admin/cadastrarservico')
     })
 

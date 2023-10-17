@@ -11,7 +11,7 @@ const ServiceTypes = sequelize.define('Services', {
     allowNull: false,
   },
   basePreco: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   // Adicione a chave estrangeira para a tabela Categoria

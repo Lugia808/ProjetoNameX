@@ -9,6 +9,7 @@
     box-sizing: border-box;
 
     font-family: 'Montserrat', sans-serif;
+    max-width: 100% !important
 }
 
 body {
