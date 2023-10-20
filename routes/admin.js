@@ -35,7 +35,6 @@ router.get('/cadastrarservico', async (req, res) => {
 })
 
 router.post('/cadastrarservico', async (req, res) => {
-
     const { nomedoServico, descricao, categoria, basePreco } = req.body
     const CategoriaData = await Categoria.findAll({
         where: {
@@ -104,14 +103,8 @@ router.get('/cadastro', (req, res) => {
     res.render('Tec/cadastroTECp1') //cadastro admin
 })
 
-
 router.post('/cadastro', async (req, res) => {
-
-    const user = req.body.user;
-    const senha = req.body.senha;
-    const email = req.body.email;
-
-    console.log(user, senha, email)
+    const { user, senha, email } = req.body;
 
     const salt = await bcrypt.genSalt(10);
     const senhahash = await bcrypt.hash(senha, salt);
@@ -129,7 +122,6 @@ router.post('/cadastro', async (req, res) => {
         req.flash('error_msg', 'Nome de usuário ou e-mail já existente.');
         console.log('Ocorreu algum erro ao criar a conta: ' + error)
     })
-
 })
 
 router.get('/home', (req, res) => {
@@ -156,13 +148,11 @@ router.get('/delete', async (req, res) => {
         tec: tec,
         session: req.user.id,
     })
-
 })
 
 router.get(`/deleteCategoria/:id`, async (req, res) => {
-
     await Categoria.destroy({
-        where: {id: req.params.id}
+        where: { id: req.params.id }
     }).then(() => {
         req.flash('success_msg', 'Categoria deletada com sucesso!');
         res.redirect('/admin/delete')
@@ -170,13 +160,11 @@ router.get(`/deleteCategoria/:id`, async (req, res) => {
         req.flash('error_msg', 'Ocorreu um erro ao criar a categoria.');
         res.redirect('/admin/delete')
     })
-
 })
 
 router.get(`/deleteServico/:id`, async (req, res) => {
-
     await ServiceTypes.destroy({
-        where: { id: req.params.id}
+        where: { id: req.params.id }
     }).then(() => {
         req.flash('success_msg', 'Tipo de serviço deletado com sucesso!');
         res.redirect('/admin/delete')
@@ -184,9 +172,7 @@ router.get(`/deleteServico/:id`, async (req, res) => {
         req.flash('error_msg', 'Ocorreu um erro ao deletar o tipo de serviço.');
         console.log('Ocorreu algum erro ao criar o tipo de serviço: ' + error)
     })
-
 })
-
 
 router.get('/validarTEC', async (req, res) => {
     if (req.isAuthenticated()) {
@@ -218,8 +204,8 @@ router.get('/validarTEC', async (req, res) => {
                     include: [
                         {
                             model: User,
-                            as: 'UserKey', // Use o alias definido na relação
-                            attributes: ['username'] // Especifique quais atributos da tabela User deseja buscar
+                            as: 'UserKey', // Usar o alias definido na relação
+                            attributes: ['username'] // Especificar quais atributos da tabela User deseja buscar
                         }
                     ]
                 });
@@ -233,7 +219,7 @@ router.get('/validarTEC', async (req, res) => {
                 // Lida com erros, se houver algum
                 res.status(500).send('Erro ao buscar usuários pendentes');
             }
-        }else{
+        } else {
             res.redirect('/')
         }
     }
@@ -259,7 +245,5 @@ router.get('/validarUsuario/:userId', async (req, res) => {
         res.redirect('/admin/validarTEC');
     }
 });
-
-
 
 module.exports = router

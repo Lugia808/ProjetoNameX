@@ -8,7 +8,6 @@ const Categoria = sequelize.define('Services', {
   descricao: {
     type: Sequelize.STRING,
     allowNull: false,
-
   },
 }, {
   tableName: 'categoria', // Nome da tabela no banco de dados

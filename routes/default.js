@@ -7,7 +7,7 @@ const User = require('../models/Database/User');
 const ServiceTypes = require('../models/Database/ServiceTypes');
 const Categoria = require('../models/Database/Categoria');
 const UserTEC = require('../models/Database/UserTEC');
-
+const Candidato = require('../models/Database/Candidato')
 
   // Rota de autenticação do Google
 router.get('/auth/google',
