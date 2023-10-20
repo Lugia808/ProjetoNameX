@@ -219,7 +219,7 @@ router.post('/criarServico_END', async (req, res) => {
                 situacao: 'vazio',
             });
             console.log('Serviço criado com sucesso!', createdService.toJSON());
-            res.redirect('/servicos')
+            res.redirect('/')
         } else {
             console.log('Usuário não encontrado');
             res.redirect('/home')

@@ -1,39 +1,42 @@
 {{#if tec}}
 
 <div class="row flex-nowrap" style="max-height: 100% !important;">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light d-flex" style="max-height: 90vh !important;">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex" style="max-height: 90vh !important;">
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white ml-3"
             style="max-height: 100% !important;">
-            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <span class="fs-5 d-none d-sm-inline">
-                   <h6><i class="bi bi-globe-americas text-black"></i> <span style="color: black !important;" id="region">Região</span></h6>
-                </span>
-            </a>
+
+            <div class="mt-2 text-dark d-none d-sm-inline">
+                <h6><i class="bi bi-globe-americas text-black"></i> <span class="text-black"
+                        style="color: black !important;" id="region">Região</span></h6>
+            </div>
+
             <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link align-middle px-0">
+                    <a href="#" class="nav-link text-light align-middle px-0">
                         <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 text-light align-middle">
                         <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                     </a>
                     <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                         <li class="w-100">
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">Item</span> 1
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-light">Item</span> 2
+                            </a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="nav-link px-0 align-middle">
+                    <a href="#" class="nav-link px-0 align-middle text-light">
                         <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Serviços</span></a>
                 </li>
                 <li>
-                    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-light">
                         <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
                     <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                         <li class="w-100">
@@ -51,7 +54,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="nav-link px-0 align-middle">
+                    <a href="#" class="nav-link px-0 align-middle text-light">
                         <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Empresas</span> </a>
                 </li>
             </ul>
@@ -74,15 +77,15 @@
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-start w-100 p-0"
-        style="min-height: 90vh !important; max-height:90vh !important;height: 90vh !important; max-width: 100vw; background-color: #f76d6d;">
+        style="min-height: 90vh !important; max-height:90vh !important;height; max-width: 84.3vw !important; background-color: #f76d6d;">
         <div class="w-100 p-0 m-0 h-100">
-            <div class="card rounded-0 w-50 h-100 d-flex justify-content-center"
+            <div class="card rounded-0 w-100 h-100 d-flex justify-content-center"
                 style="max-height: 100% !important; box-shadow:none !important; border:none !important">
 
                 <div class="card-header">
                     <h5 class="card-title">Candidatura do técnico</h5>
                 </div>
-                <div class="card-body h-100 w-50" style="overflow: auto;">
+                <div class="card-body h-100 w-50" id="cardBHPg" style="overflow: auto;">
 
                     <div class="d-flex justify-content-center align-items-center h-100 w-100 flex-column">
 
@@ -92,14 +95,17 @@
                         <div class="card w-100 mb-4" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Nome do Serviço: {{dataValues.nomedoServico}}</p>
+                                    <p><span class="h5 text-black bg-warning">Nome do Serviço: </span><br>
+                                        {{dataValues.nomedoServico}}</p>
 
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Descrição: {{dataValues.descricao}}</p>
+                                    <p><span class="h5 text-black bg-warning">Descrição:</span>
+                                        <br>{{dataValues.descricao}}
+                                    </p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <p>Categoria: {{dataValues.categoria}}</p>
                                 </div>
@@ -130,9 +136,9 @@
 <div class="w-100 d-flex">
     <div class="d-flex justify-content-center align-items-center h-100 w-25 d-flex flex-column"
         style="min-height: 90vh;height:100vh; max-width: 100vw; background-color: #ececec;">
-        <div class="w-100 h-100 bg-dark p-3">
-
-            <h6><i class="bi bi-globe-americas"></i> <span style="color: black !important;">Região (ajeitar back-end)</span></h6>
+        <div class="mt-2 text-dark d-none d-sm-inline">
+            <h6><i class="bi bi-globe-americas text-black"></i> <span class="text-black"
+                    style="color: black !important;" id="region">Região</span></h6>
         </div>
         <div class="card-body w-100 bg-primary">
             <ul class="list-group">
@@ -179,23 +185,42 @@
 
 
 <script>
-    const mapLink = document.getElementById('region')
-    mapLink.href = '';
-    mapLink.textContent = '';
-    if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            const latitude = position.coords.latitude
-            const longitude = position.coords.longitude
+    const mapLink = document.getElementById('region');
 
-            mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-            mapLink.textContent = latitude + longitude
-        }, (error) => {
-            console.log(error)
-        })
+    if (mapLink) {
+        mapLink.href = '';
+        mapLink.textContent = 'Carregando...';
 
+        if ('geolocation' in navigator) {
+
+            navigator.geolocation.getCurrentPosition((position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const apiKey = 'f7ce2a52a6344835b449c60d7b9f415c';
+
+                fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.results && data.results.length > 0) {
+                            const city = data.results[0].components.city;
+                            console.log(`Cidade: ${city}`);
+                            mapLink.textContent = city
+
+                        } else {
+                            console.log('Não foi possível encontrar a cidade para a latitude e longitude fornecidas.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ocorreu um erro ao buscar informações de geocodificação:', error);
+                    });
+            }, (error) => {
+                console.log('Erro na geolocalização:', error);
+            });
+        } else {
+            alert('Geolocalização não disponível');
+        }
     } else {
-        alert('Não foi possível encontrar sua localização')
+        console.log('Elemento com ID "region" não encontrado no HTML');
     }
-
 
 </script>

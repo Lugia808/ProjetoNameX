@@ -41,7 +41,6 @@ router.post('/cadastrarservico', async (req, res) => {
             nomedacategoria: categoria
         }
     })
-    console.log(CategoriaData[0].id)
     ServiceTypes.create({
         nomedoServico: nomedoServico,
         descricao: descricao,
