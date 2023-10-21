@@ -44,8 +44,9 @@
                     <p class="mb-1">Nome de Usuário: <span class="text-primary">{{UserKey.dataValues.username}}</span>
                     </p>
                     <p>Situação: <span class="text-primary">{{dataValues.situacao}}</span></p>
-                    <form action="/admin/validarUsuario/{{dataValues.id}}" method="post">
-                        <button class="btn btn-primary" type="submit">Validar</button>
+                    <form action="/admin/banirusuario/{{dataValues.id}}" method="post">
+                        <button class="btn btn-danger" type="submit">Banir</button>
+                        {{!-- CONFIGURAR --}}
                     </form>
                 </div>
             </div>

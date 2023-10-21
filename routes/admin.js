@@ -212,7 +212,8 @@ router.get('/validarTEC', async (req, res) => {
                 // O resultado da consulta conterá o username da tabela User
                 res.render('admin/validacao', {
                     TecInfo: TecInfo,
-                    TecInfoAprovados: TecInfoAprovados
+                    TecInfoAprovados: TecInfoAprovados,
+                    session: req.user.id
                 });
             } catch (error) {
                 // Lida com erros, se houver algum
