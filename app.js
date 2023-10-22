@@ -2,24 +2,42 @@ const express = require('express');
 const app = express();
 const handlebars = require('express-handlebars');
 const path = require('path');
-const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
-const flash = require('connect-flash');
-const bcrypt = require('bcryptjs');
 
 // Configuração do Handlebars
 app.engine("handlebars", handlebars.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
+
+//FLash
+app.use(session({
+    secret: 'your-secret-key', // Change this to a secure secret key
+    resave: false,
+    saveUninitialized: false
+}));
+
+const flash = require('connect-flash')
+
+app.use(flash());
+
 
 // Middleware
-app.use(session({
-    secret: 'secret_key',
-    resave: false,
-    saveUninitialized: false,
-}));
+
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.warning_msg = req.flash('warning_msg');
+    res.locals.error = req.flash("error");
+    
+    next();
+})
+
+
+
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
@@ -40,10 +58,9 @@ app.use('/admin', adminRoutes);
 app.use('/tec', technicianRoutes);
 app.use('/company', companyRoutes);
 
+
 // Porta de escuta
 const port = 8080;
 app.listen(port, () => {
     console.log(`Servidor rodando na porta https://localhost:${port}`);
 });
-
-//imagem fundo login https://ibb.co/ss3DDtJ

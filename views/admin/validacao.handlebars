@@ -1,0 +1,56 @@
+{{#if error}}
+<div class="alert alert-warning w-100 error-message">{{error}}</div>
+{{/if}}
+{{#if success_msg}}
+
+<div class="alert alert-success w-100 success-message text-center">
+    <p>{{success_msg}}</p>
+</div>
+{{/if}}
+
+
+
+<div class="w-100 row d-flex mt-5 justify-content-center" style="min-height: 80vh !important;">
+
+    <div class="w-50 d-flex align-items-center flex-column justify-content-center" id="column1">
+        <div class="w-75 h-100 p-3 rounded-1" id="column1h" style="background-color: #E2E3E5;">
+            <h5 class="text-center">Usuários a serem validados</h5>
+            {{#each TecInfo}}
+            <div class="card w-100 mt-3">
+                <div class="card-body w-100">
+                    <h6>Número de Registro: <span class="text-primary">{{dataValues.num_registro}}</span></h6>
+                    <p class="mb-1">Nome de Usuário: <span class="text-primary">{{UserKey.dataValues.username}}</span>
+                    </p>
+                    <p>Situação: <span class="text-primary">{{dataValues.situacao}}</span></p>
+
+                    <a href="/admin/validarUsuario/{{dataValues.id}}"><button class="btn btn-primary"
+                            type="submit">Validar</button></a>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- Restante do seu código Handlebars... -->
+
+
+    <div class="w-50 d-flex align-items-center flex-column">
+        <div class="w-75 h-100 p-3 rounded-1" style="background-color: #E2E3E5;">
+            <h5 class="text-center">Usuários Aprovados</h5>
+            {{#each TecInfoAprovados}}
+            <div class="card w-100 mt-3">
+                <div class="card-body w-100">
+                    <h6>Número de Registro: <span class="text-primary">{{dataValues.num_registro}}</span></h6>
+                    <p class="mb-1">Nome de Usuário: <span class="text-primary">{{UserKey.dataValues.username}}</span>
+                    </p>
+                    <p>Situação: <span class="text-primary">{{dataValues.situacao}}</span></p>
+                    <form action="/admin/banirusuario/{{dataValues.id}}" method="post">
+                        <button class="btn btn-danger" type="submit">Banir</button>
+                        {{!-- CONFIGURAR --}}
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

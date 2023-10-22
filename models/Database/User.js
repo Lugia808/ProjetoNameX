@@ -1,11 +1,6 @@
 const { sequelize, Sequelize } = require('./Database')
 
 const User = sequelize.define('User', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
   username: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -20,15 +15,28 @@ const User = sequelize.define('User', {
     type: Sequelize.STRING,
     allowNull: true
   },
-  password: {
+  tipo:{
     type: Sequelize.STRING,
     allowNull: false
   },
-  
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
 }, {
   tableName: 'users', // Nome da tabela no banco de dados
 })
 
 //User.sync({force: true})
+// ,
+//   CEP:{
+//     type: Sequelize.STRING,
+//     allowNull: false
+//   },
+//   Endereço //Colocar numero da casa
+//   :{
+    
+//   }
+
 
 module.exports = User

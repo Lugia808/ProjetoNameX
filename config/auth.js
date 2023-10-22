@@ -6,7 +6,7 @@ const User = require('../models/Database/User')
 require('../models/Database/User')
 
 module.exports = function (passport) {
-
+var message = []
     passport.use(new localStrategy({ usernameField: 'username', passwordField: 'senha' }, (username, senha, done) => {
 
         User.findOne({ where: { username: username } }).then((usuario) => {
@@ -21,8 +21,9 @@ module.exports = function (passport) {
                 }
                 if (erro) {
                     console.log('erro, arquivo auth: ' + erro)
+                    return done(null, false, {message: 'Essa conta não existe'})
                 } else {
-                    return done(null, false, { message: 'Senha incorreta' })
+                    return done(null, false, { message: 'Essa conta não existe' })
                 }
             })
         }).catch((erro) => {
@@ -31,6 +32,7 @@ module.exports = function (passport) {
     }))
 
     passport.serializeUser((user, done) => {
+        console.log('pegando serializando')
         done(null, user.id)
     })
 

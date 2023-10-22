@@ -1,0 +1,31 @@
+    {{#if warning_msg}}
+    <div class="w-100 d-flex justify-content-end mt-2 mb-0" style='position:absolute';>
+        <div class="alert alert-warning w-auto warning-message text-center">
+            <p>{{warning_msg}}</p>
+        </div>
+    </div>
+    {{/if}}
+<div class="w-100 d-flex justify-content-center align-items-center flex-column mb-0" style="height:80vh">
+
+    <div class="card w-50" id="cardNRG">
+        <h3 class="mt-4 card-title text-center">Formulário UserTEC</h3>
+        <div class="card-body w-75 p-5" id="BCardNRG">
+
+            <form action="/tec/infos" method="post">
+                <div class="form-group w-100">
+                    <label for="num_registro">Número de Registro:</label>
+                    <input type="text" class="form-control" id="num_registro" name="num_registro" maxlength="7" minlength="7" placeholder="0000000/UF"
+                        required>
+                    <div class="alert alert-warning mt-3">
+                        <small>Caso seu registro profissional tenha menos de 7 dígitos, favor
+                            complementá-lo
+                            com zeros à esquerda.</small>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+            </form>
+
+        </div>
+    </div>
+</div>

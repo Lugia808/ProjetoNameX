@@ -1,0 +1,44 @@
+<div class="w-100 d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="card w-75" style="max-height: 80vh !important; background-color: #E2E3E5 !important">
+
+        <div class="card-header" style="background-color: #E2E3E5;">
+            <h5 class="card-title">Criar Novo Serviço</h5>
+        </div>
+        <div class="card-body h-100">
+
+            <form action="/criarServico_END" method="post">
+
+                <div class="mb-3">
+                    <label for="Categoria" class="form-label">Categoria selecionada</label>
+                    <input type="text" name="categoria" class="form-control" value="{{categoria}}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nomeServico" class="form-label">Nome do Serviço</label>
+                    <select name="nomeServico" class="form-control" id="servico">
+                        <option selected>Selecione uma opção</option>
+
+                        {{#each ServiceTypesData}}
+                        <option value="{{dataValues.nomedoServico}}">{{dataValues.nomedoServico}}</option>
+                        {{/each}}
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="descricaoServico" class="form-label">Descrição</label>
+                    <input type="text" class="form-control" name="descricao">
+                </div>
+                <div class="mb-3">
+                    <label for="valorServico" class="form-label">Valor</label>
+                    <input type="text" class="form-control" id="valorServico" placeholder="Digite o valor do serviço"
+                        name="valorServico">
+                </div>
+                <button type="submit" class="btn btn-primary">Criar Serviço</button>
+            </form>
+
+
+
+        </div>
+    </div>
+
+</div>
