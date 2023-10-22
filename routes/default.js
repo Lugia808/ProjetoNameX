@@ -7,20 +7,22 @@ const User = require('../models/Database/User');
 const ServiceTypes = require('../models/Database/ServiceTypes');
 const Categoria = require('../models/Database/Categoria');
 const UserTEC = require('../models/Database/UserTEC');
-const Candidato = require('../models/Database/Candidato')
+const Candidato = require('../models/Database/Candidato');
+const { or } = require('sequelize');
+const {Sequelize, sequelize} = require('../models/Database/Database')
 
-  // Rota de autenticação do Google
+// Rota de autenticação do Google
 router.get('/auth/google',
-passport.authenticate('google', { scope: ['email', 'profile'] })
+    passport.authenticate('google', { scope: ['email', 'profile'] })
 );
 
 // Rota de callback após a autenticação bem-sucedida
 router.get('/callback',
-passport.authenticate('google', {
-    successRedirect: '/', // Rota de sucesso
-    failureRedirect: '/login', // Rota de falha
-    failureFlash: true
-})
+    passport.authenticate('google', {
+        successRedirect: '/', // Rota de sucesso
+        failureRedirect: '/login', // Rota de falha
+        failureFlash: true
+    })
 );
 
 
@@ -29,6 +31,7 @@ passport.authenticate('google', {
 
 router.get('/', async (req, res) => {
     if (req.isAuthenticated()) {
+
         const serviceData = await Services.findAll();
         const serviceTypes = await ServiceTypes.findAll();
         const UserData = await User.findOne({ where: { id: req.user.id } });
@@ -68,6 +71,7 @@ router.get('/', async (req, res) => {
                     });
                 }
                 else {
+
                     res.render('default/homepage', {
                         serviceData: serviceData,
                         session: req.user.id
@@ -89,20 +93,28 @@ router.get('/home', async (req, res) => {
         const UserData = await User.findOne({ where: { id: req.user.id } });
         const UserTypes = UserData.dataValues.tipo
         const CategoriaData = await Categoria.findAll();
+        const CandidatoData = await Candidato.findAll();
         const UserTecData = await UserTEC.findOne({
             where: {
                 UserId: UserData.dataValues.id
             }
         })
+        const candidatosComServicos = await Services.findAll({
+            include: [
+                {
+                    model: Candidato,
+                    where: { id_servico: Sequelize.col('Services.id') }
+                }
+            ]
+        });
+        
 
         if (UserTypes === 'admin') {
             res.redirect('/admin/home');
         }
         else {
-
             if (UserData) {
                 if (UserTypes === 'tecnico') {
-
                     if (!UserTecData) {
                         req.flash('warning_msg', 'preencha essas informações para começarmos a nossa parceria');
                         res.redirect('/tec/infos')
@@ -113,17 +125,20 @@ router.get('/home', async (req, res) => {
                             res.redirect('/saladeespera')
                         }
                     }
-
                     const tec = 'tecnico'
                     res.render('default/homepage', {
                         serviceData: serviceData,
                         tec: tec,
                         CategoriaData: CategoriaData,
                         session: req.user.id,
-                        serviceTypes: serviceTypes
+                        serviceTypes: serviceTypes,
+                        UserData: UserData
                     });
                 }
                 else {
+
+                    //Fazer a relação de candidatos e servicos
+
                     res.render('default/homepage', {
                         serviceData: serviceData,
                         session: req.user.id
@@ -138,10 +153,17 @@ router.get('/home', async (req, res) => {
 
 })
 
+router.get('/candidatura/:id', async (req, res) => {
+    Candidato.create({
+        id_candidato: req.params.id
+    }).then(() => {
+        console.log('criado com sucesso')
+        res.redirect('/')
+    })
 
+})
 
 router.get('/criarservico', async (req, res) => {
-
 
     if (req.isAuthenticated()) {
         const serviceData = await Services.findAll();
@@ -217,6 +239,7 @@ router.post('/criarServico_END', async (req, res) => {
                 valor: valorServico,
                 contratante: userData.username,
                 situacao: 'vazio',
+                Candidato: 'null'
             });
             console.log('Serviço criado com sucesso!', createdService.toJSON());
             res.redirect('/')
@@ -281,11 +304,11 @@ router.get('/saladeespera', async (req, res) => {
                 situacao: 'aprovado'
             }
         });
-        if(!isAprovado){
+        if (!isAprovado) {
             res.render('Tec/waitingPage', {
                 session: req.user.id
             });
-        }else{
+        } else {
             res.redirect('/home')
         }
 
