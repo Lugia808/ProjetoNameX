@@ -9,7 +9,7 @@ const User = require('../models/Database/User');
 const UserTEC = require('../models/Database/UserTEC');
 const UserEMP = require('../models/Database/UserEMP');
 require('../config/auth')(passport);
-require('../config/authG')(passport)
+// require('../config/authG')(passport)
 
 //Fazer que de acordo com a conta logada redirecionar para sua rota (company, technician)
 

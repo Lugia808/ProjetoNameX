@@ -35,7 +35,7 @@ const Services = sequelize.define('Services', {
   tableName: 'services', // Nome da tabela no banco de dados
 })
 
-// Services.hasMany(Candidato, { foreignKey: 'id' });
+Services.hasMany(Candidato, { foreignKey: 'id' });
 //Services.sync({force: true})
 
 module.exports = Services

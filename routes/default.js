@@ -11,19 +11,19 @@ const Candidato = require('../models/Database/Candidato');
 const { or } = require('sequelize');
 const {Sequelize, sequelize} = require('../models/Database/Database')
 
-// Rota de autenticação do Google
-router.get('/auth/google',
-    passport.authenticate('google', { scope: ['email', 'profile'] })
-);
+// // Rota de autenticação do Google
+// router.get('/auth/google',
+//     passport.authenticate('google', { scope: ['email', 'profile'] })
+// );
 
 // Rota de callback após a autenticação bem-sucedida
-router.get('/callback',
-    passport.authenticate('google', {
-        successRedirect: '/', // Rota de sucesso
-        failureRedirect: '/login', // Rota de falha
-        failureFlash: true
-    })
-);
+// router.get('/callback',
+//     passport.authenticate('google', {
+//         successRedirect: '/', // Rota de sucesso
+//         failureRedirect: '/login', // Rota de falha
+//         failureFlash: true
+//     })
+// );
 
 
 
@@ -142,7 +142,7 @@ router.get('/home', async (req, res) => {
                     res.render('default/homepage', {
                         serviceData: serviceData,
                         session: req.user.id
-                    });
+                    }); 
                 }
             }
         }
